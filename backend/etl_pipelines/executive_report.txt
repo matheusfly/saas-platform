@@ -1,0 +1,21 @@
+Executive Summary - 2025-08-03
+    ----------------------------------------------------
+    This report provides a snapshot of the business's health, including key performance indicators,
+    predictive analytics, and strategic alerts.
+
+    Key Performance Indicators:
+    - Monthly Recurring Revenue (MRR): $10000.00
+    - Churn Rate: 0.00%
+    - Average Customer Lifetime Value (LTV): $nan
+    - Active Clients: 100
+
+    Predictive Insights:
+    - The churn prediction model has an accuracy of 100.00%.
+    - We have identified 0 clients with a high probability of churning.
+    - The LTV prediction model has an RMSE of $0.00.
+
+    Strategic Alerts:
+    - No critical alerts.
+
+    Recommendations:
+    - All metrics are within acceptable ranges.

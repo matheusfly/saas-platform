@@ -1,0 +1,43 @@
+{
+  "name": "saas-home",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm:dev:main\" \"npm:dev:schedule-manager\" \"npm:dev:base-bi-dashboard\" \"npm:dev:painel-cliente-360\"",
+    "dev:main": "vite",
+    "build": "npm run build:schedule-manager && npm run build:base-bi-dashboard && npm run build:painel-cliente-360",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "start": "concurrently \"npm:start:schedule-manager\" \"npm:start:base-bi-dashboard\" \"npm:start:painel-cliente-360\"",
+    "start:schedule-manager": "cd src/pages/schedule-manager && npm start",
+    "build:schedule-manager": "cd src/pages/schedule-manager && npm run build",
+    "dev:schedule-manager": "cd src/pages/schedule-manager && npm run dev",
+    "start:base-bi-dashboard": "cd src/pages/base_business-intelligence-dashboard && npm start",
+    "build:base-bi-dashboard": "cd src/pages/base_business-intelligence-dashboard && npm run build",
+    "dev:base-bi-dashboard": "cd src/pages/base_business-intelligence-dashboard && npm run dev",
+    "start:painel-cliente-360": "cd src/pages/painel-cliente-360 && npm start",
+    "build:painel-cliente-360": "cd src/pages/painel-cliente-360 && npm run build",
+    "dev:painel-cliente-360": "cd src/pages/painel-cliente-360 && npm run dev"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "@typescript-eslint/eslint-plugin": "^8.39.0",
+    "@typescript-eslint/parser": "^8.39.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.2.0",
+    "eslint": "^9.33.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.1"
+  }
+}

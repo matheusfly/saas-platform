@@ -1,0 +1,7 @@
+
+[
+  { "id": 21, "name": "Freya Singh", "email": "freya.s@example.com", "avatar": "https://i.pravatar.cc/150?img=21", "status": "Novo", "totalSpend": 125, "lastSeen": "há 1 dia", "joinDate": "2024-07-15" },
+  { "id": 22, "name": "   Kenji Tanaka   ", "email": "kenji.t@example.com", "avatar": "https://i.pravatar.cc/150?img=22", "status": "Novo", "totalSpend": 80, "lastSeen": "há 2 dias", "joinDate": "2024-07-14" },
+  { "id": 1, "name": "Elena Rodriguez (Duplicado)", "email": "elena.r@example.com", "avatar": "https://i.pravatar.cc/150?img=1", "status": "Ativo", "totalSpend": 2340, "lastSeen": "há 3 horas", "joinDate": "2023-05-21" },
+  { "id": 23, "name": "Fatima Al-Jamil (Inválido)", "email": "", "avatar": "https://i.pravatar.cc/150?img=23", "status": "Novo", "totalSpend": 210, "lastSeen": "ontem", "joinDate": "2024-07-16" }
+]

@@ -1,0 +1,13 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+[remote "origin"]
+	url = https://github.com/matheusfly/bi-dash-submodule.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "feature/gym-analytics-dashboard"]
+	remote = origin
+	merge = refs/heads/feature/gym-analytics-dashboard
+	vscode-merge-base = origin/feature/gym-analytics-dashboard

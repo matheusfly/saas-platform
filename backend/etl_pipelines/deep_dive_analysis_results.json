@@ -1,0 +1,360 @@
+{
+    "metadata": {
+        "processing_date": "2025-08-04 00:23:18.649143",
+        "cash_flow_records": 9,
+        "date_range": {
+            "start": "2025-01-01 00:00:00",
+            "end": "2025-03-03 00:00:00"
+        },
+        "fixed_costs": 15000.0,
+        "analysis_duration_seconds": 3.7165188789367676
+    },
+    "advanced_client_analysis": {
+        "survival_analysis": {
+            "survival_analysis": {
+                "median_survival_time": Infinity,
+                "survival_at_30_days": 1.0,
+                "survival_at_90_days": 1.0,
+                "survival_at_180_days": 1.0,
+                "hazard_ratio": 0.0,
+                "ltv": 200.0
+            },
+            "survival_by_category": {},
+            "hazard_ratios": {}
+        },
+        "churn_early_warning": {
+            "churn_early_warning": {
+                "error": "index 1 is out of bounds for axis 1 with size 1"
+            }
+        }
+    },
+    "advanced_financial_analysis": {
+        "pricing_optimization": {
+            "price_elasticity": {},
+            "revenue_impact": {}
+        },
+        "scenario_analysis": {
+            "scenarios": {
+                "optimistic": {
+                    "total_revenue": 3471.5625,
+                    "net_income": -177569.90625,
+                    "profit_margin": -5114.985147177964,
+                    "break_even_month": 12,
+                    "peak_client_count": 6.75,
+                    "final_client_count": 6.75,
+                    "client_growth_rate": 125.0,
+                    "parameters": {
+                        "revenue_growth": 0.15,
+                        "churn_reduction": 0.2,
+                        "new_client_increase": 0.25
+                    }
+                },
+                "pessimistic": {
+                    "total_revenue": 2497.3125000000005,
+                    "net_income": -178251.88125,
+                    "profit_margin": -7137.748329454162,
+                    "break_even_month": 12,
+                    "peak_client_count": 5.5500000000000025,
+                    "final_client_count": 5.5500000000000025,
+                    "client_growth_rate": 85.00000000000009,
+                    "parameters": {
+                        "revenue_growth": -0.05,
+                        "churn_reduction": -0.1,
+                        "new_client_increase": -0.15
+                    }
+                },
+                "realistic": {
+                    "total_revenue": 3016.1250000000005,
+                    "net_income": -177888.7125,
+                    "profit_margin": -5897.922417008578,
+                    "break_even_month": 12,
+                    "peak_client_count": 6.3000000000000025,
+                    "final_client_count": 6.3000000000000025,
+                    "client_growth_rate": 110.00000000000007,
+                    "parameters": {
+                        "revenue_growth": 0.05,
+                        "churn_reduction": 0.05,
+                        "new_client_increase": 0.1
+                    }
+                }
+            },
+            "sensitivity_analysis": {
+                "churn_sensitivity": {
+                    "elasticity": 0.0,
+                    "revenue_at_50pct_base_churn": 1800.0,
+                    "revenue_at_75pct_base_churn": 1800.0,
+                    "revenue_at_100pct_base_churn": 1800.0,
+                    "revenue_at_125pct_base_churn": 1800.0,
+                    "revenue_at_150pct_base_churn": 1800.0
+                },
+                "revenue_per_client_sensitivity": {
+                    "clients_at_80pct_revenue": 3.75,
+                    "clients_at_90pct_revenue": 3.3333333333333335,
+                    "clients_at_100pct_revenue": 3.0,
+                    "clients_at_110pct_revenue": 2.727272727272727,
+                    "clients_at_120pct_revenue": 2.5
+                }
+            }
+        },
+        "financial_diagnostic": {
+            "financial_health_status": {
+                "health_score": 20.0,
+                "health_category": "Critical",
+                "profit_margin": -763.3333333333334,
+                "operating_income": -13740.0
+            },
+            "diagnostic_model": {
+                "error": "only length-1 arrays can be converted to Python scalars"
+            }
+        }
+    },
+    "operational_analysis": {
+        "time_series_analysis": {
+            "time_series_decomposition": {
+                "trend": {
+                    "slope": 0.12193129321430599,
+                    "intercept": 26.108696640066718,
+                    "r_squared": 0.0026395607064513193,
+                    "p_value": 0.6916849675560196,
+                    "std_err": 0.3059847599826052,
+                    "trend_strength": 0.48868272054685613
+                },
+                "seasonal": {
+                    "seasonal_strength": 0.6186390596201444,
+                    "seasonal_indices": {
+                        "0": 35.020734616679526,
+                        "1": -15.13321417955761,
+                        "2": -18.611693987921235,
+                        "3": -4.537417012184317,
+                        "4": 8.9141563713082,
+                        "5": -8.164091547177534,
+                        "6": 13.779984260370808
+                    },
+                    "seasonal_amplitude": 185.38619097008922
+                },
+                "anomalies": {
+                    "count": 1,
+                    "dates": [
+                        "2025-02-03"
+                    ],
+                    "values": [
+                        300.0
+                    ],
+                    "anomaly_scores": [
+                        4.2476811770789675
+                    ]
+                },
+                "residual_stats": {
+                    "mean": -2.6751710971872122,
+                    "std": 39.39277714703674,
+                    "skew": 1.2216011657495813,
+                    "kurtosis": 3.8741214805436694
+                }
+            },
+            "anomaly_detection": {
+                "isolation_forest": {
+                    "anomaly_count": 3,
+                    "anomaly_dates": [
+                        "2025-01-03",
+                        "2025-02-03",
+                        "2025-03-03"
+                    ],
+                    "anomaly_values": [
+                        300.0,
+                        300.0,
+                        300.0
+                    ],
+                    "anomaly_scores": [
+                        -0.03160032525427914,
+                        -0.0017964335746687432,
+                        -0.0017964335746687432
+                    ]
+                },
+                "anomaly_diagnosis": {
+                    "2025-01-03": {
+                        "revenue": 300.0,
+                        "expected_revenue": 8.9141563713082,
+                        "deviation_pct": 3265.433446574972,
+                        "impact": "positive",
+                        "potential_reasons": [
+                            "Exceptionally high revenue day"
+                        ]
+                    },
+                    "2025-02-03": {
+                        "revenue": 300.0,
+                        "expected_revenue": 35.020734616679526,
+                        "deviation_pct": 756.6353712555112,
+                        "impact": "positive",
+                        "potential_reasons": [
+                            "Exceptionally high revenue day"
+                        ]
+                    },
+                    "2025-03-03": {
+                        "revenue": 300.0,
+                        "expected_revenue": 35.020734616679526,
+                        "deviation_pct": 756.6353712555112,
+                        "impact": "positive",
+                        "potential_reasons": [
+                            "Exceptionally high revenue day"
+                        ]
+                    }
+                }
+            }
+        },
+        "sales_funnel_conversion": {
+            "funnel_conversion_rates": {},
+            "trial_conversion": {
+                "trial_clients_count": 0,
+                "converted_clients_count": 0,
+                "conversion_rate": 0.0,
+                "revenue_per_trial": 0.0
+            },
+            "funnel_health": {}
+        },
+        "staff_performance": {
+            "performance_quadrants": {
+                "Low Revenue, Low Conversion": {
+                    "consultor": 3,
+                    "revenue_per_client": 600.0,
+                    "conversion_rate": NaN
+                }
+            },
+            "optimal_staffing_hours": {
+                "José": 0,
+                "João": 0,
+                "Maria": 0
+            },
+            "staff_scheduling_efficiency": {
+                "total_possible_hours": 324,
+                "active_hours": 9,
+                "utilization_rate": 2.7777777777777777,
+                "optimal_staff_count": 0.125
+            },
+            "cross_sell_metrics": {
+                "João": {
+                    "avg_products_per_client": 1.0,
+                    "cross_sell_rate": 0.0
+                },
+                "Maria": {
+                    "avg_products_per_client": 1.0,
+                    "cross_sell_rate": 0.0
+                },
+                "José": {
+                    "avg_products_per_client": 1.0,
+                    "cross_sell_rate": 0.0
+                }
+            },
+            "scheduling_optimization": {
+                "potential_revenue_increase": 0.0,
+                "recommended_staff_change": -2.875
+            }
+        }
+    },
+    "executive_summary": {
+        "key_findings": [
+            "Median client lifespan is inf days"
+        ],
+        "critical_issues": [],
+        "top_opportunities": []
+    },
+    "statistical_diagnostics": {
+        "stationarity_test": {
+            "adf_statistic": -3.506019662291196,
+            "p_value": 0.007833835554429909,
+            "is_stationary": true,
+            "critical_values": {
+                "1%": -3.5443688564814813,
+                "5%": -2.9110731481481484,
+                "10%": -2.5931902777777776
+            }
+        },
+        "autocorrelation": {
+            "acf": [
+                1.0,
+                0.5398132427843805,
+                0.16120543293718165,
+                -0.05424448217317488,
+                -0.056536502546689314,
+                -0.05882852292020374,
+                -0.061120543293718174,
+                -0.0634125636672326,
+                -0.06570458404074701,
+                -0.06799660441426142,
+                -0.07028862478777588,
+                -0.0725806451612903,
+                -0.07487266553480476,
+                -0.07716468590831918,
+                -0.07945670628183366,
+                -0.0817487266553481,
+                -0.08404074702886252,
+                -0.0863327674023769,
+                -0.08862478777589133,
+                -0.09091680814940577,
+                -0.09320882852292019,
+                -0.09550084889643462,
+                -0.0977928692699491,
+                -0.10008488964346351,
+                -0.1023769100169779,
+                -0.10466893039049237,
+                -0.02538200339558577,
+                0.10829088851160161,
+                0.2691567628749293,
+                0.20897000565930957,
+                0.22246745897000567
+            ],
+            "pacf": [
+                1.0,
+                0.548662640207075,
+                -0.1923571521635052,
+                -0.08979223879099296,
+                0.07098345451692858,
+                -0.07322346961971567,
+                -0.03326710515552849,
+                -0.017807533552056762,
+                -0.046277592808264136,
+                -0.03782310031932624,
+                -0.04026104828471061,
+                -0.04803823546100372,
+                -0.04938784064542237,
+                -0.054107863957401615,
+                -0.05963875112766947,
+                -0.06470050745424581,
+                -0.07124161530752142,
+                -0.07872582503165468,
+                -0.0873503843037729,
+                -0.09781893481364966,
+                -0.11055237539754877,
+                -0.12647050623717815,
+                -0.1470685627440805,
+                -0.17479939576302955,
+                -0.2143220851512169,
+                -0.2754607480554631,
+                -0.10794890049755489,
+                0.019306981599134257,
+                0.25651331853292886,
+                -0.2049789800469046,
+                0.4087707532385765
+            ],
+            "significant_lags": [
+                1,
+                28
+            ]
+        },
+        "process_capability": {},
+        "spc_metrics": {},
+        "period_comparison": {
+            "revenue_recent": 1200.0,
+            "revenue_previous": 500.0,
+            "revenue_change_pct": 140.0,
+            "t_statistic": -0.7071067811865475,
+            "p_value": 0.5060214228881836,
+            "statistically_significant": false
+        }
+    },
+    "execution_metrics": {
+        "start_time": "2025-08-04 00:23:14.932961301",
+        "end_time": "2025-08-04 00:23:18.697975",
+        "processing_time_seconds": 3.765007972717285,
+        "data_quality_score": 0
+    }
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#9A9873" />
+    <meta name="description" content="Business Intelligence Dashboard - Data-driven insights and analytics platform" />
+    <meta name="author" content="Calistenia & Escalada" />
+    <meta name="keywords" content="business intelligence, analytics, dashboard, data visualization, BI" />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="BI Dashboard" />
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <title>Business Intelligence Dashboard | Calistenia & Escalada</title>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preconnect" href="https://esm.sh" />
+    <link rel="preconnect" href="https://d3js.org" />
+    <link rel="dns-prefetch" href="https://esm.sh" />
+    <link rel="dns-prefetch" href="https://d3js.org" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js" defer></script>
+    
+    <script>
+      // Enhanced Tailwind Configuration
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'background-primary': '#9A9873',      // Light Olive
+              'surface-header': '#1E1E1E',          // Charcoal Black
+              'surface-sidebar': '#353B37',         // Deep Olive Camo
+              'surface-card': '#FAF9F0',            // Off-white/light beige for cards
+              'text-main': '#1E1E1E',               // Primary Text (Charcoal)
+              'text-muted': '#858360',              // Secondary Text (Camo Sage)
+              'text-on-accent': '#1E1E1E',          // Text on primary buttons (Charcoal)
+              'text-on-dark': '#FAF9F0',            // Off-white for text on dark surfaces
+              'accent-primary': '#B0D236',          // Primary Buttons (Lime Green)
+              'accent-primary-hover': '#A1C02F',    // Hover for primary buttons
+              'accent-secondary': '#6F6C4B',        // Secondary Buttons (Dusty Sage)
+              'accent-positive': '#B0D236',         // Status Success (Lime Green)
+              'accent-warning': '#BDB58A',          // Status Warning (Muted Khaki)
+              'accent-negative': '#D9534F',         // Status Error (Classic Red)
+              'brand-border': '#656B4B',            // Borders/Dividers (Army Camo Green)
+            },
+            transitionProperty: {
+              'width': 'width',
+              'spacing': 'margin, padding',
+            },
+            minHeight: {
+              'screen-75': '75vh',
+            },
+          },
+        },
+        variants: {
+          extend: {
+            opacity: ['disabled'],
+            backgroundColor: ['active', 'disabled'],
+            textColor: ['active', 'disabled'],
+            borderColor: ['active', 'disabled'],
+          }
+        },
+        plugins: [
+          function({ addUtilities }) {
+            const newUtilities = {
+              '.scrollbar-hide': {
+                /* IE and Edge */
+                '-ms-overflow-style': 'none',
+                /* Firefox */
+                'scrollbar-width': 'none',
+                /* Safari and Chrome */
+                '&::-webkit-scrollbar': {
+                  display: 'none',
+                },
+              },
+              '.safe-top': {
+                paddingTop: 'env(safe-area-inset-top)',
+              },
+              '.safe-bottom': {
+                paddingBottom: 'env(safe-area-inset-bottom)',
+              },
+            }
+            addUtilities(newUtilities)
+          }
+        ],
+      }
+    </script>
+    
+    <!-- Import Maps for ES Modules -->
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://esm.sh/react@^19.1.1/",
+        "react": "https://esm.sh/react@^19.1.1",
+        "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+        "@google/genai": "https://esm.sh/@google/genai@^1.12.0",
+        "recharts": "https://esm.sh/recharts@^3.1.0",
+        "react-force-graph": "https://esm.sh/react-force-graph@^1.48.0"
+      }
+    }
+    </script>
+    
+    <!-- Critical CSS -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+      
+      :root {
+        --primary: #B0D236;
+        --primary-dark: #9ABD2F;
+        --secondary: #6F6C4B;
+        --background: #9A9873;
+        --surface: #FAF9F0;
+        --text: #1E1E1E;
+        --text-muted: #858360;
+      }
+      
+      * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        @apply bg-background-primary text-text-main min-h-full;
+      }
+
+      .fade-in {
+        animation: fadeInAnimation 0.5s ease-in-out forwards;
+      }
+
+      @keyframes fadeInAnimation {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+      }
+      
+      /* Print styles */
+      @media print {
+        body * {
+          visibility: hidden;
+        }
+        #root, #root * {
+          visibility: visible;
+        }
+        #root {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+        }
+        .no-print {
+          display: none !important;
+        }
+      }
+    </style>
+        
+    <!-- PWA Service Worker Registration
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').then(
+            registration => {
+              console.log('ServiceWorker registration successful');
+            },
+            err => {
+              console.error('ServiceWorker registration failed: ', err);
+            }
+          );
+        });
+      }
+    </script>
+    -->
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-background-primary text-text-main">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
