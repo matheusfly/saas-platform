@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@genkit-ai/mcp": "^1.16.0",
+    "@google/genai": "^1.13.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },

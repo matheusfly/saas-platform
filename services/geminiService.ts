@@ -2,7 +2,7 @@ import { GoogleGenAI, Type, Chat } from "@google/genai";
 import { Customer, GeminiInsight, StrategicInsight, CustomerStatus } from "../types";
 
 // Assume API_KEY is set in the environment variables
-const apiKey = process.env.API_KEY;
+const apiKey = import.meta.env.VITE_API_KEY;
 if (!apiKey) {
     throw new Error("API_KEY environment variable not set");
 }
