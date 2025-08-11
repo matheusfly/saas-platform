@@ -54,8 +54,9 @@
   justify-content: center;
   padding: 1rem;
   background-image: url('/img/logo_pattern.png');
-  background-size: cover;
+  background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .app-hero::before {
@@ -72,9 +73,9 @@
   inset: 0;
   background-image: url('/img/b_bg - Editado.png');
   background-repeat: no-repeat;
-  background-position: center 20%;
+  background-position: center;
   background-size: contain;
-  opacity: 0.08;
+  opacity: 0.3;
   filter: blur(1px);
   pointer-events: none;
 }
@@ -85,13 +86,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
+  gap: 4rem;
 }
 
 .hero-card {
-  padding: 1.5rem;
+  padding: 2.5rem;
   text-align: center;
-  max-width: 520px;
+  max-width: 600px;
 }
 
 .hero-title {
@@ -122,7 +123,7 @@
 .btn {
   font-weight: 700;
   font-size: 1.25rem;
-  padding: 1.5rem 3rem;
+  padding: 2rem 4rem;
   border-radius: 0.75rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -130,6 +131,7 @@
 
 .btn:hover {
   transform: scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
 }
 
 .btn-primary {
@@ -138,9 +140,21 @@
   border: none;
 }
 
+.btn-primary:hover {
+  background-color: transparent;
+  color: #9EFF00;
+  border: 2px solid #9EFF00;
+}
+
 .btn-outline {
   background-color: transparent;
   color: #9EFF00;
   border: 2px solid #9EFF00;
   box-shadow: 0 0 0 1px rgba(158, 255, 0, 0.2), 0 8px 30px rgba(158, 255, 0, 0.1);
+}
+
+.btn-outline:hover {
+  background-color: #9EFF00;
+  color: #1E1E1E;
+  border: none;
 }

@@ -11,21 +11,21 @@ const App: React.FC = () => {
       <div className="app-content text-center">
         <header>
           <div className="glass-card hero-card">
-            <img src={mainLogo} alt="Main Logo" style={{ height: '96px', marginBottom: '0.5rem' }} />
+            <img src={mainLogo} alt="Main Logo" style={{ height: '115px', marginBottom: '0.3rem' }} />
             <h2 className="hero-title">Business Intelligence</h2>
             <p className="hero-subtitle">SaaS platform</p>
           </div>
         </header>
         <main>
           <div className="buttons-row">
-            <button onClick={() => handleNavigation('http://localhost:5175')} className="btn btn-outline">
+            <button onClick={() => handleNavigation('http://localhost:5175')} className="btn btn-primary">
               Controle de Ponto
             </button>
             <button onClick={() => handleNavigation('http://localhost:5176')} className="btn btn-primary">
-              Dashboard Gerencial
+              Painel Gerencial
             </button>
             <button onClick={() => handleNavigation('http://localhost:5174')} className="btn btn-primary">
-              Clientes 360°
+              Central de Clientes
             </button>
           </div>
         </main>
