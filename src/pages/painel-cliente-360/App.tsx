@@ -51,18 +51,10 @@ function App() {
     <div className="flex bg-ui-background min-h-screen font-sans">
       <Sidebar onSearchChange={handleSearch} searchTerm={searchTerm} />
       <main className="flex-1 p-6 lg:p-10 ml-64">
-          <div className="flex justify-end mb-4">
-            <button
-              onClick={() => window.location.href = 'http://localhost:5173'}
-              className="bg-transparent text-text-default font-semibold py-2 px-4 rounded-lg hover:bg-ui-surface transition-colors duration-300 border border-border"
-            >
-              Voltar ao Menu
-            </button>
-          </div>
           <Routes>
             <Route path="/" element={
-                <DashboardPage
-                    searchedCustomers={searchedCustomers}
+                <DashboardPage 
+                    searchedCustomers={searchedCustomers} 
                     loading={loading}
                     error={error}
                     onRetry={fetchCustomers}

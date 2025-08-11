@@ -240,12 +240,6 @@ const App: React.FC = () => {
                     <MoonIcon className="h-6 w-6" />
                   )}
                 </button>
-                <button
-                  onClick={() => window.location.href = 'http://localhost:5173'}
-                  className="text-sm font-semibold py-2 px-3 rounded-lg hover:bg-gray-200 dark:hover:bg-army-olive-light transition-colors duration-300 border border-gray-300 dark:border-army-olive"
-                >
-                  Menu
-                </button>
             </div>
           </div>
         </header>

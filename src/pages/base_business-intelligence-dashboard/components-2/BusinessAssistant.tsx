@@ -8,7 +8,7 @@ const MessageBubble: React.FC<{ message: ChatMessage }> = ({ message }) => {
     return (
         <div className={`flex ${isModel ? 'justify-start' : 'justify-end'} mb-4`}>
             <div 
-                className={`max-w-xs lg:max-w-md px-4 py-3 rounded-lg shadow ${isModel ? 'bg-primary-bg/50 text-text-main' : 'bg-accent-primary text-text-on-accent'}`}
+                className={`max-w-xs lg:max-w-md px-4 py-3 rounded-lg shadow ${isModel ? 'bg-background-primary/50 text-text-main' : 'bg-accent-primary text-text-on-accent'}`}
                 style={{ whiteSpace: 'pre-wrap', wordWrap: 'break-word' }}
             >
                 {message.content}
@@ -21,7 +21,7 @@ const SuggestionButton: React.FC<{ text: string; onClick: (text: string) => void
     <button
         onClick={() => onClick(text)}
         disabled={disabled}
-        className="px-3 py-1.5 bg-primary-bg/50 text-text-main rounded-full text-sm hover:bg-brand-border transition-colors disabled:bg-gray-200 disabled:cursor-not-allowed"
+        className="px-3 py-1.5 bg-background-primary/50 text-text-main rounded-full text-sm hover:bg-brand-border transition-colors disabled:bg-gray-200 disabled:cursor-not-allowed"
     >
         {text}
     </button>
@@ -158,7 +158,7 @@ const BusinessAssistant: React.FC<BusinessAssistantProps> = ({ data }) => {
             {messages.map((msg, index) => <MessageBubble key={index} message={msg} />)}
             {isLoading && messages[messages.length-1].role !== 'model' && (
                 <div className="flex justify-start mb-4">
-                    <div className="max-w-xs lg:max-w-md px-4 py-3 rounded-lg bg-primary-bg/50 text-text-main shadow">
+                    <div className="max-w-xs lg:max-w-md px-4 py-3 rounded-lg bg-background-primary/50 text-text-main shadow">
                     <div className="flex items-center space-x-2">
                         <div className="dot-pulse"></div>
                         <div className="dot-pulse" style={{animationDelay: '0.2s'}}></div>
@@ -179,7 +179,7 @@ const BusinessAssistant: React.FC<BusinessAssistantProps> = ({ data }) => {
         )}
 
         <form onSubmit={handleFormSubmit} className="pt-2 border-t border-brand-border">
-            <div className="flex items-center bg-primary-bg/40 rounded-lg">
+            <div className="flex items-center bg-background-primary/40 rounded-lg">
             <input
                 type="text"
                 value={input}

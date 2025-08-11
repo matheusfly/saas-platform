@@ -1,5 +1,9 @@
 # Interactive Business Intelligence Dashboard
 
+<p align="center">
+  <img src="Captura%20de%20tela%202025-08-11%20171811.png" alt="Painel Cliente 360 Logo" width="200"/>
+</p>
+
 This project is a sophisticated, data-driven Business Intelligence (BI) dashboard built with React, TypeScript, and Tailwind CSS. It provides a comprehensive suite of tools for visualizing and analyzing business data, including sales funnels, financial performance, and team productivity. A key feature of this dashboard is its integration with the Google Gemini API to generate actionable, AI-powered insights and provide an interactive business assistant.
 
 ## ✨ Features
@@ -9,8 +13,8 @@ This project is a sophisticated, data-driven Business Intelligence (BI) dashboar
 - **Interactive Visualizations**: A rich library of charts and graphs built with **Recharts** and **D3.js**, including funnels, heatmaps, radar charts, and more.
 - **Dynamic Filtering**: Easily filter the entire dashboard's data by predefined date ranges (e.g., Today, 7 Days, 30 Days, etc.).
 - **AI-Powered Insights**:
-  - **Insights Panel**: Generates a concise summary and actionable insights based on the current data view.
-  - **Business Assistant**: An interactive chat assistant, powered by the Gemini API, that can answer natural language questions about the dashboard data.
+  - **Insights Panel**: The "Insights" panel leverages the Gemini API to provide a quick, text-based summary of the current data view. When activated, it sends a curated subset of the dashboard's key performance indicators (KPIs) and chart data to the Gemini API, which then generates a concise, actionable analysis. This allows users to get a high-level overview of the data without having to manually interpret each chart.
+  - **Business Assistant**: The "Business Assistant" offers a more interactive and conversational approach to data analysis. It initializes a chat session with the Gemini API, providing the full dashboard data as context in a system instruction. This allows the assistant to answer natural language questions about the data, such as "What was our best-performing sales channel last quarter?" or "Which products have the highest conversion rates?" The assistant streams responses back to the user, creating a dynamic and intuitive experience.
 - **Responsive Design**: A clean, modern UI that adapts to different screen sizes.
 - **Component-Based Architecture**: Built with reusable React components for maintainability and scalability.
 
@@ -278,5 +282,40 @@ All data schemas and type definitions are centralized in `types.ts`. This ensure
 
 ### Setup
 
-1.  **Set up Environment Variables:**
-    The Gemini API requires an API key. This key must be provided as an environment variable named `API_KEY`. The application is hard-coded to read it from `process.env.API_KEY`. In a real development environment, this would be managed via a hosting provider's secret management or a local `.env` file with a build tool.
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/matheusfly/saas-platform.git
+    cd saas-platform
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Set up Environment Variables:**
+    The Gemini API requires an API key. This key must be provided as an environment variable named `API_KEY`. You can create a `.env.local` file in the root of the project and add the following line:
+    ```
+    API_KEY=your_gemini_api_key
+    ```
+
+### Available Scripts
+
+In the project directory, you can run:
+
+-   `npm run dev`: Runs the app in the development mode.
+-   `npm run build`: Builds the app for production to the `dist` folder.
+-   `npm run lint`: Lints the code for potential errors.
+-   `npm run preview`: Serves the production build locally for preview.
+
+---
+
+## 🚀 Deployment
+
+This project is configured to be deployed as a static site. The `npm run build` command will generate a `dist` directory with all the necessary files.
+
+### Hosting Options
+
+-   **Vercel:** Vercel is a great option for deploying React applications. It offers a seamless deployment experience with automatic builds and previews.
+-   **Netlify:** Netlify is another popular choice for deploying static sites. It offers a generous free tier and a simple drag-and-drop deployment process.
+-   **GitHub Pages:** You can also deploy this project to GitHub Pages. You'll need to configure the `vite.config.ts` file to set the correct base path.

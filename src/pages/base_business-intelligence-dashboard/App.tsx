@@ -100,12 +100,6 @@ const App: React.FC = () => {
                 </h1>
                 <p className="text-text-on-dark opacity-70">Data-driven insights powered by AI</p>
               </div>
-              <button
-                onClick={() => window.location.href = 'http://localhost:5173'}
-                className="bg-transparent text-text-on-dark font-semibold py-2 px-4 rounded-lg hover:bg-brand-accent/20 transition-colors duration-300 border border-brand-accent/50"
-              >
-                Voltar ao Menu
-              </button>
             </div>
           </header>
           <main key={currentPage} className="flex-1 p-4 sm:p-6 lg:p-8 fade-in">

@@ -1,4 +1,10 @@
 
+<div style="background-image: url('img/image.png'); background-size: cover; padding: 20px;">
+
+<p align="center">
+  <img src="img/image.png" alt="Painel Cliente 360 Logo" width="200"/>
+</p>
+
 # Painel Cliente 360 - Dashboard de Inteligência de Clientes
 
 O **Painel Cliente 360** é um dashboard interativo e moderno construído para fornecer uma visão completa e estratégica dos clientes de uma empresa. Ele combina visualização de dados, gerenciamento de informações e insights baseados em Inteligência Artificial para capacitar equipes a tomar decisões proativas e melhorar o engajamento do cliente.
@@ -295,7 +301,7 @@ Esta aplicação tem uma base sólida. Os próximos passos para um ambiente de p
 graph TD
     Client[Browser: React App]
     LB[Load Balancer]
-    API_Server[API Server (Node.js/Python/Go)]
+    API_Server["API Server (Node.js/Python/Go)"]
     DB[(Database: PostgreSQL/MongoDB)]
     
     Client -- HTTPS Request --> LB
@@ -340,3 +346,5 @@ graph TD
 1.  **API Key:** O projeto requer uma chave de API do Google Gemini. Esta chave deve ser configurada como uma variável de ambiente chamada `API_KEY`. O código (`geminiService.ts`) já está preparado para lê-la de `process.env.API_KEY`.
 2.  **Servidor Local:** Sirva os arquivos estáticos (`index.html`, `index.tsx`, etc.) a partir de um servidor web local. A maioria das ferramentas de desenvolvimento frontend (como Vite ou `live-server` do npm) faz isso automaticamente.
 3.  **Navegador:** Abra o `index.html` no seu navegador. A aplicação será carregada e estará pronta para uso.
+
+</div>

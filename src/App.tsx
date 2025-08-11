@@ -28,10 +28,10 @@ const App: React.FC = () => {
             </button>
           </div>
         </main>
-        <footer className="text-center w-full">
-          <p className="hero-subtitle">SaaS Platform</p>
-        </footer>
       </div>
+      <footer className="app-footer">
+        <p className="hero-subtitle">SaaS Platform</p>
+      </footer>
     </div>
   );
 };
