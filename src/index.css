@@ -1,5 +1,4 @@
-@tailwind base;
-@tailwind components;
+@import "tailwindcss/preflight";
 @tailwind utilities;
 
 @layer base {
@@ -20,7 +19,7 @@
     margin: 0;
     min-height: 100vh;
     background-color: #1E1E1E; /* brand-neutral-dark */
-    overflow: hidden;
+    overflow-x: hidden;
     position: relative;
   }
 
@@ -37,10 +36,111 @@
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* App-specific layout to guarantee desired look even if Tailwind utilities are purged */
+.app-hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-image: url('/img/logo_pattern.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.app-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(31, 31, 31, 0.6), rgba(31, 31, 31, 0.6));
+  pointer-events: none;
+}
+
+.app-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/img/b_bg - Editado.png');
+  background-repeat: no-repeat;
+  background-position: center 20%;
+  background-size: contain;
+  opacity: 0.08;
+  filter: blur(1px);
+  pointer-events: none;
+}
+
+.app-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero-card {
+  padding: 1.5rem;
+  text-align: center;
+  max-width: 520px;
+}
+
+.hero-title {
+  color: #E5E7EB;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.hero-subtitle {
+  color: #D1D5DB;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.buttons-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .buttons-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.btn {
+  font-weight: 700;
+  font-size: 1.25rem;
+  padding: 1.5rem 3rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn-primary {
+  background-color: #9EFF00; /* brand-accent */
+  color: #1E1E1E; /* brand-neutral-dark */
+  border: none;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #9EFF00;
+  border: 2px solid #9EFF00;
+  box-shadow: 0 0 0 1px rgba(158, 255, 0, 0.2), 0 8px 30px rgba(158, 255, 0, 0.1);
 }

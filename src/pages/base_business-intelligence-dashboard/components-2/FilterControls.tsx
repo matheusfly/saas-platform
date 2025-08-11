@@ -27,7 +27,7 @@ const FilterControls: React.FC<FilterControlsProps> = ({ filters, onFilterChange
             className={`px-4 py-1.5 rounded-md text-sm font-bold transition-all duration-200 ease-in-out transform hover:scale-105 ${
               filters.dateRange === option.value
                 ? 'bg-accent-primary text-text-on-accent shadow-lg'
-                : 'bg-background-primary/50 text-text-main hover:bg-brand-border'
+                : 'bg-primary-bg/50 text-text-main hover:bg-brand-border'
             }`}
           >
             {option.label}

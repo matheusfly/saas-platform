@@ -4,27 +4,18 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"npm:dev:main\" \"npm:dev:schedule-manager\" \"npm:dev:base-bi-dashboard\" \"npm:dev:painel-cliente-360\"",
-    "dev:main": "vite",
-    "build": "npm run build:schedule-manager && npm run build:base-bi-dashboard && npm run build:painel-cliente-360",
+    "dev": "vite",
+    "build": "vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "start": "concurrently \"npm:start:schedule-manager\" \"npm:start:base-bi-dashboard\" \"npm:start:painel-cliente-360\"",
-    "start:schedule-manager": "cd src/pages/schedule-manager && npm start",
-    "build:schedule-manager": "cd src/pages/schedule-manager && npm run build",
-    "dev:schedule-manager": "cd src/pages/schedule-manager && npm run dev",
-    "start:base-bi-dashboard": "cd src/pages/base_business-intelligence-dashboard && npm start",
-    "build:base-bi-dashboard": "cd src/pages/base_business-intelligence-dashboard && npm run build",
-    "dev:base-bi-dashboard": "cd src/pages/base_business-intelligence-dashboard && npm run dev",
-    "start:painel-cliente-360": "cd src/pages/painel-cliente-360 && npm start",
-    "build:painel-cliente-360": "cd src/pages/painel-cliente-360 && npm run build",
-    "dev:painel-cliente-360": "cd src/pages/painel-cliente-360 && npm run dev"
+    "preview": "vite preview"
   },
   "dependencies": {
+    "@genkit-ai/mcp": "^1.16.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.11",
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
     "@typescript-eslint/eslint-plugin": "^8.39.0",
