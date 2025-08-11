@@ -36,12 +36,12 @@
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 /* App-specific layout to guarantee desired look even if Tailwind utilities are purged */
@@ -53,10 +53,6 @@
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  background-image: url('/img/logo_pattern.png');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .app-hero::before {
@@ -71,12 +67,11 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('/img/b_bg - Editado.png');
+  background-image: url('/img/logo_pattern.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   opacity: 0.3;
-  filter: blur(1px);
   pointer-events: none;
 }
 
