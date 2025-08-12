@@ -12,7 +12,7 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
-    "@genkit-ai/mcp": "^1.16.0",
+    "@genkit-ai/mcp": "^1.16.1",
     "@google/genai": "^1.13.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
