@@ -1,0 +1,5 @@
+[tool.taskipy.tasks]
+test_root = "npm install && npm run dev"
+test_dashboard = "cd base_business-intelligence-dashboard && npm install && npm run dev"
+test_scheduler = "cd schedule-manager && npm install && npm run dev"
+test_clients = "cd painel-cliente-360 && npm install && npm run dev"
