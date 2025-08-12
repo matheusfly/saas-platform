@@ -11,3 +11,5 @@
 	remote = origin
 	merge = refs/heads/main
 	vscode-merge-base = origin/main
+[branch "feat/ui-testing-suite"]
+	vscode-merge-base = origin/main

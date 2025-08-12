@@ -36,12 +36,12 @@
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.45);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 /* App-specific layout to guarantee desired look even if Tailwind utilities are purged */
@@ -74,9 +74,8 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  opacity: 0.2;
+  opacity: 0.3;
   pointer-events: none;
-  z-index: 2;
 }
 
 .app-content {
