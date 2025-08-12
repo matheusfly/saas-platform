@@ -1,0 +1,274 @@
+{
+    "metadata": {
+        "processing_date": "2025-08-03 23:28:07.377632",
+        "cash_flow_records": 3,
+        "date_range": {
+            "start": "2025-01-01 00:00:00",
+            "end": "2025-01-03 00:00:00"
+        }
+    },
+    "financial_metrics": {
+        "total_revenue": 600.0,
+        "revenue_by_payment_method": {
+            "Cash": 100.0,
+            "Credit Card Online": 300.0,
+            "PIX": 200.0
+        },
+        "revenue_by_product_category": {
+            "Calisthenics": 100.0,
+            "Gympass": 200.0,
+            "Personal Training": 300.0
+        },
+        "average_transaction_value": 200.0,
+        "total_transactions": 3,
+        "daily_revenue_avg": 200.0,
+        "transactions_per_day_avg": 1.0,
+        "monthly_revenue_trend": {
+            "2025-01": 600.0
+        },
+        "monthly_revenue_growth_rate": 0.0,
+        "gympass_usage_count": 0,
+        "gympass_usage_percentage": 0.0,
+        "trial_count": 0,
+        "clients_from_trials": 0,
+        "trial_conversion_rate": 0.0,
+        "package_revenue": 0.0,
+        "package_sales_count": 0,
+        "consultant_revenue": {
+            "José": 300.0,
+            "João": 100.0,
+            "Maria": 200.0
+        }
+    },
+    "client_metrics": {
+        "total_clients": 3,
+        "active_clients": 1,
+        "blocked_clients": 1,
+        "cancelled_clients": 1,
+        "client_retention_rate": 33.33333333333333,
+        "new_clients_by_month": {
+            "2025-01": 3
+        },
+        "avg_client_lifespan_days": 0.0,
+        "avg_revenue_per_client": 200.0,
+        "median_revenue_per_client": 200.0,
+        "client_lifetime_value": 0.0,
+        "avg_purchases_per_client": 1.0,
+        "churned_clients_last_30_days": 0,
+        "monthly_churn_rate": 0.0
+    },
+    "product_metrics": {
+        "product_category_metrics": {
+            "Calisthenics": {
+                "total_revenue": 100.0,
+                "total_units_sold": 1,
+                "avg_price": 100.0,
+                "transaction_count": 1,
+                "client_count": 1,
+                "revenue_per_client": 100.0,
+                "monthly_growth_rate": 0.0
+            },
+            "Gympass": {
+                "total_revenue": 200.0,
+                "total_units_sold": 1,
+                "avg_price": 200.0,
+                "transaction_count": 1,
+                "client_count": 1,
+                "revenue_per_client": 200.0,
+                "monthly_growth_rate": 0.0
+            },
+            "Personal Training": {
+                "total_revenue": 300.0,
+                "total_units_sold": 1,
+                "avg_price": 300.0,
+                "transaction_count": 1,
+                "client_count": 1,
+                "revenue_per_client": 300.0,
+                "monthly_growth_rate": 0.0
+            }
+        },
+        "clients_with_multiple_products": 0,
+        "multi_product_penetration": 0.0,
+        "trial_to_package_conversion": 0.0,
+        "package_renewal_rate": 0.0
+    },
+    "consultant_metrics": {
+        "consultant_metrics": {
+            "José": {
+                "total_revenue": 300.0,
+                "transaction_count": 1,
+                "client_count": 1,
+                "revenue_per_transaction": 300.0,
+                "revenue_per_client": 300.0,
+                "avg_client_value": 300.0
+            },
+            "João": {
+                "total_revenue": 100.0,
+                "transaction_count": 1,
+                "client_count": 1,
+                "revenue_per_transaction": 100.0,
+                "revenue_per_client": 100.0,
+                "avg_client_value": 100.0
+            },
+            "Maria": {
+                "total_revenue": 200.0,
+                "transaction_count": 1,
+                "client_count": 1,
+                "revenue_per_transaction": 200.0,
+                "revenue_per_client": 200.0,
+                "avg_client_value": 200.0
+            }
+        },
+        "top_consultant_by_revenue": {
+            "name": "José",
+            "revenue": 300.0
+        },
+        "avg_revenue_per_consultant": 200.0
+    },
+    "time_series_metrics": {
+        "rolling_revenue": {
+            "7_day": {},
+            "30_day": {}
+        },
+        "rolling_transactions": {
+            "7_day": {},
+            "30_day": {}
+        },
+        "daily_seasonality": {
+            "monday": 0.0,
+            "tuesday": 0.0,
+            "wednesday": 100.0,
+            "thursday": 200.0,
+            "friday": 300.0,
+            "saturday": 0.0,
+            "sunday": 0.0
+        },
+        "monthly_seasonality": {
+            "1": 200.0
+        },
+        "monthly_growth_rate": 0.0,
+        "weekly_growth_rate": 0.0
+    },
+    "cohort_metrics": {
+        "cohort_retention": {
+            "2025-01": {
+                "2025-01": 100.0
+            }
+        },
+        "average_retention_by_month": {
+            "0": 100.0
+        },
+        "avg_month_1_retention": 0.0,
+        "avg_month_3_retention": 0.0,
+        "avg_month_6_retention": 0.0,
+        "avg_month_12_retention": 0.0
+    },
+    "data_quality": {
+        "missing_values": {
+            "código": {
+                "count": 0,
+                "percentage": 0.0
+            },
+            "recibo": {
+                "count": 0,
+                "percentage": 0.0
+            },
+            "valor_unitário": {
+                "count": 0,
+                "percentage": 0.0
+            },
+            "valor_total": {
+                "count": 0,
+                "percentage": 0.0
+            },
+            "valor_desconto": {
+                "count": 0,
+                "percentage": 0.0
+            },
+            "quantidade": {
+                "count": 0,
+                "percentage": 0.0
+            },
+            "status": {
+                "count": 0,
+                "percentage": 0.0
+            },
+            "forma_pagamento": {
+                "count": 0,
+                "percentage": 0.0
+            },
+            "consultor": {
+                "count": 0,
+                "percentage": 0.0
+            },
+            "data_recibo": {
+                "count": 0,
+                "percentage": 0.0
+            },
+            "item": {
+                "count": 0,
+                "percentage": 0.0
+            },
+            "transaction_date": {
+                "count": 0,
+                "percentage": 0.0
+            },
+            "year": {
+                "count": 0,
+                "percentage": 0.0
+            },
+            "month": {
+                "count": 0,
+                "percentage": 0.0
+            },
+            "day": {
+                "count": 0,
+                "percentage": 0.0
+            },
+            "day_of_week": {
+                "count": 0,
+                "percentage": 0.0
+            },
+            "is_weekend": {
+                "count": 0,
+                "percentage": 0.0
+            },
+            "month_year": {
+                "count": 0,
+                "percentage": 0.0
+            },
+            "effective_unit_price": {
+                "count": 0,
+                "percentage": 0.0
+            },
+            "product_category": {
+                "count": 0,
+                "percentage": 0.0
+            },
+            "is_trial": {
+                "count": 0,
+                "percentage": 0.0
+            },
+            "is_package": {
+                "count": 0,
+                "percentage": 0.0
+            },
+            "is_zero_value": {
+                "count": 0,
+                "percentage": 0.0
+            },
+            "net_revenue": {
+                "count": 0,
+                "percentage": 0.0
+            }
+        },
+        "data_completeness_score": 100.0,
+        "negative_revenue_count": 0,
+        "zero_quantity_count": 0,
+        "price_mismatch_count": 0,
+        "future_date_count": 0,
+        "missing_date_count": 0,
+        "invalid_client_id_count": 0,
+        "data_quality_score": 100.0
+    }
+}

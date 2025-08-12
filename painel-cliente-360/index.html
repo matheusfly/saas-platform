@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel Cliente 360</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              // Military green theme
+              primary: '#B0D236',
+              'primary-hover': '#A0C226',
+              success: '#B0D236',
+              border: '#6F6C4B',
+              
+              'text-default': '#FFFFFF',
+              'text-secondary': '#BDB58A', // Changed from Sage to Tactical Beige for better contrast
+              'text-on-primary': '#1E1E1E',
+              'text-on-sidebar': '#FFFFFF',
+              
+              'ui-background': '#1E1E1E',
+              'ui-surface': '#404225', // Darker olive for better contrast
+              'ui-sidebar': '#1E1E1E',
+              'ui-sidebar-surface': '#31331c', // Darker version of ui-surface for hovers
+
+              // Text colors for states
+              'text-increase': '#B0D236',
+              'text-decrease': '#C75450',
+              'text-error': '#D99996',
+
+              // Background colors for states
+              'bg-error': '#C75450',
+              'bg-error-surface': 'rgba(199, 84, 80, 0.1)',
+              
+              // Status colors (Updated for better contrast)
+              'status-green-text': '#1E1E1E',
+              'status-green-bg': '#B0D236',
+              'status-yellow-text': '#1E1E1E',
+              'status-yellow-bg': '#BDB58A', // Solid Tactical Beige
+              'status-red-text': '#1E1E1E',
+              'status-red-bg': '#C75450',
+              'status-blue-text': '#FFFFFF',
+              'status-blue-bg': '#5A6B83', // Muted Slate Blue
+
+              // Chart colors
+              'chart-green': '#B0D236',
+              'chart-yellow': '#BDB58A',
+              'chart-red': '#C75450',
+              'chart-blue': '#5A6B83', // Muted Slate Blue
+            },
+          },
+        },
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.13.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.8.0",
+    "react-window": "https://esm.sh/react-window@^1.8.10",
+    "@types/react-window": "https://esm.sh/@types/react-window@^1.8.8"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-ui-background text-text-default antialiased">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

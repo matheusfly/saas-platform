@@ -1,0 +1,6 @@
+{
+  "name": "Schedule Manager",
+  "description": "An application to manage and visualize teacher and student schedules, optimizing planning and performance.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
