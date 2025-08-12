@@ -5,4 +5,12 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   root: '.',
   plugins: [react()],
+  server: {
+    hmr: {
+      overlay: false,
+    },
+    headers: {
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
+    },
+  },
 })

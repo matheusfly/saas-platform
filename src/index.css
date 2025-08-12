@@ -36,12 +36,12 @@
 }
 
 .glass-card {
-  background: rgba(30, 30, 30, 0.55);
+  background: rgba(255, 255, 255, 0.45);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 /* App-specific layout to guarantee desired look even if Tailwind utilities are purged */
