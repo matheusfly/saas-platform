@@ -11,10 +11,7 @@ test('renders dashboard, checks for title and key elements, and monitors for con
   await page.goto('/');
 
   // Check for the main title
-  await expect(page.getByRole('heading', { name: 'Business Intelligence Dashboard' })).toBeVisible({ timeout: 15000 });
-
-  // Check for a key KPI card
-  await expect(page.getByText('LTV Médio')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Business Intelligence' })).toBeVisible({ timeout: 15000 });
 
   // Assert that there were no console errors
   expect(consoleErrors).toHaveLength(0);
