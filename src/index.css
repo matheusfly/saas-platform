@@ -144,8 +144,10 @@
 }
 
 .btn-primary:hover {
-  background-color: #8ee000;
-  color: #1E1E1E;
+  background-color: transparent;
+  color: #9EFF00;
+  border: 2px solid #9EFF00;
+  box-shadow: 0 0 20px #9EFF00;
 }
 
 .btn-outline {
