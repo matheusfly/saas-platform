@@ -44,6 +44,14 @@
 
 ## 📚 Documentation
 
+### 📦 Project Modules
+
+| Module | Description | Documentation | Status |
+|--------|-------------|----------------|--------|
+| **Business Intelligence Dashboard** | Core analytics and reporting dashboard | [View Docs](src/pages/base_business-intelligence-dashboard/README-Dash.md) | ✅ Active |
+| **Client 360° Panel** | Customer data and interaction management | [View Docs](src/pages/painel-cliente-360/README-360.md) | ✅ Active |
+| **Schedule Manager** | Employee scheduling and time tracking | [View Docs](src/pages/schedule-manager/README-Ponto.md) | ✅ Active |
+
 ### 📖 Getting Started
 
 | Document | Description | Last Updated |
@@ -74,11 +82,11 @@
 
 #### Module Documentation
 
-| Module | Description | Status |
-|--------|-------------|--------|
-| [📊 Dashboard](docs/modules/DASHBOARD.md) | Data visualization and analytics | Coming Soon |
-| [👥 Client 360°](docs/modules/CLIENT_360.md) | Client management and insights | Coming Soon |
-| [📅 Schedule Manager](docs/modules/SCHEDULE_MANAGER.md) | Appointment scheduling system | Coming Soon |
+| Module | Description | Documentation | Status |
+|--------|-------------|----------------|--------|
+| 📊 Business Intelligence Dashboard | Core analytics and reporting platform | [View Documentation](src/pages/base_business-intelligence-dashboard/README-Dash.md) | ✅ Active |
+| 👥 Client 360° Panel | Comprehensive customer data and interaction management | [View Documentation](src/pages/painel-cliente-360/README-360.md) | ✅ Active |
+| 📅 Schedule Manager | Employee scheduling and time tracking system | [View Documentation](src/pages/schedule-manager/README-Ponto.md) | ✅ Active |
 
 ### 🔍 Quick Links
 

@@ -1,4 +1,18 @@
-# Interactive Business Intelligence Dashboard
+<div align="center">
+
+# Business Intelligence Dashboard
+  <img src="image.png" alt="Business Intelligence Dashboard" width="50%" center/>
+    
+  <p>
+    <img src="https://img.shields.io/badge/build-passing-brightgreen" alt="Build Passing">
+    <img src="https://img.shields.io/badge/version-1.0.0-blue" alt="Version 1.0.0">
+    <img src="https://img.shields.io/badge/license-MIT-green" alt="License MIT">
+    <img src="https://img.shields.io/github/last-commit/matheusfly/saas-platform" alt="Last Commit">
+    <img src="https://img.shields.io/github/issues/matheusfly/saas-platform" alt="Open Issues">
+    <img src="https://img.shields.io/github/forks/matheusfly/saas-platform" alt="Forks">
+    <img src="https://img.shields.io/github/stars/matheusfly/saas-platform" alt="Stars">
+  </p>
+</div>
 
 This project is a sophisticated, data-driven Business Intelligence (BI) dashboard built with React, TypeScript, and Tailwind CSS. It provides a comprehensive suite of tools for visualizing and analyzing business data, including sales funnels, financial performance, and team productivity. A key feature of this dashboard is its integration with the Google Gemini API to generate actionable, AI-powered insights and provide an interactive business assistant.
 
