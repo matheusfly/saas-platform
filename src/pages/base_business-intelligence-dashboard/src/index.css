@@ -1,0 +1,168 @@
+@import "tailwindcss/preflight";
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #1E1E1E; /* brand-neutral-dark */
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  #root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* App-specific layout to guarantee desired look even if Tailwind utilities are purged */
+.app-hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.app-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(31, 31, 31, 0.7), rgba(31, 31, 31, 1)), url('/img/b_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.app-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/img/logo_pattern.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.app-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 5rem;
+  padding: 2rem 1rem;
+}
+
+.hero-card {
+  padding: 2.5rem;
+  text-align: center;
+  max-width: 600px;
+}
+
+.hero-title {
+  color: #E5E7EB;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.hero-subtitle {
+  color: #D1D5DB;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.buttons-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .buttons-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.btn {
+  font-weight: 700;
+  font-size: 1.25rem;
+  padding: 2rem 4rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  background-color: #9EFF00; /* brand-accent */
+  color: #1E1E1E; /* brand-neutral-dark */
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: #9EFF00;
+  border: 2px solid #9EFF00;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #9EFF00;
+  border: 2px solid #9EFF00;
+  box-shadow: 0 0 0 1px rgba(158, 255, 0, 0.2), 0 8px 30px rgba(158, 255, 0, 0.1);
+}
+
+.btn-outline:hover {
+  background-color: #9EFF00;
+  color: #1E1E1E;
+  border: none;
+}
+
+.app-footer {
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+  text-align: center;
+}

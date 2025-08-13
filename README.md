@@ -84,9 +84,9 @@
 
 | Module | Description | Documentation | Status |
 |--------|-------------|----------------|--------|
-| 📊 Business Intelligence Dashboard | Core analytics and reporting platform | [View Documentation](src/pages/base_business-intelligence-dashboard/README-Dash.md) | ✅ Active |
-| 👥 Client 360° Panel | Comprehensive customer data and interaction management | [View Documentation](src/pages/painel-cliente-360/README-360.md) | ✅ Active |
-| 📅 Schedule Manager | Employee scheduling and time tracking system | [View Documentation](src/pages/schedule-manager/README-Ponto.md) | ✅ Active |
+| 📊 Business Intelligence Dashboard | Core analytics and reporting platform | [View Documentation](src/pages/base_business-intelligence-dashboard/README.md) | ✅ Active |
+| 👥 Client 360° Panel | Comprehensive customer data and interaction management | [View Documentation](src/pages/painel-cliente-360/README.md) | ✅ Active |
+| 📅 Schedule Manager | Employee scheduling and time tracking system | [View Documentation](src/pages/schedule-manager/README.md) | ✅ Active |
 
 ### 🔍 Quick Links
 

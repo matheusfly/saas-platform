@@ -1,0 +1,3 @@
+[submodule "src/pages/base_business-intelligence-dashboard"]
+	path = src/pages/base_business-intelligence-dashboard
+	url = https://github.com/matheusfly/dashboard-gerencial.git

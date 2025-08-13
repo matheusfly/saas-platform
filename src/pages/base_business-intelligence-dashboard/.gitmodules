@@ -1,0 +1,11 @@
+[submodule "src/pages/schedule-manager-temp"]
+	path = src/pages/schedule-manager/schedule-manager-temp
+	url = https://github.com/matheusfly/controle-ponto.git
+[submodule "src/pages/base_business-intelligence-dashboard-temp"]
+	path = src/pages/base_business-intelligence-dashboard-temp
+	url = https://github.com/matheusfly/dashboard-gerencial.git
+[submodule "src/pages/painel-cliente-360-temp"]
+	path = src/pages/painel-cliente-360/painel-cliente-360-temp
+	url = https://github.com/matheusfly/painel-cliente-360.git
+[submodule "src/pages/base_business-intelligence-dashboard"]
+	url = https://github.com/matheusfly/dashboard-gerencial.git
