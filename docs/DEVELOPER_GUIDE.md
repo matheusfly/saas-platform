@@ -142,6 +142,323 @@ npm run test:coverage
 - Test user interactions, not implementation details
 - Aim for >80% test coverage
 
+## ⚙️ Advanced Configuration
+
+### Environment Variables
+
+Configure the application using environment variables in `.env` files:
+
+```env
+# API Configuration
+VITE_API_URL=https://api.yourdomain.com
+VITE_API_TIMEOUT=30000
+
+# Authentication
+VITE_AUTH0_DOMAIN=your-tenant.auth0.com
+VITE_AUTH0_CLIENT_ID=your-client-id
+VITE_AUTH0_AUDIENCE=your-api-audience
+
+# Feature Flags
+VITE_ENABLE_EXPERIMENTAL_FEATURES=false
+VITE_ENABLE_ANALYTICS=true
+
+# Performance
+VITE_IMAGE_OPTIMIZATION=true
+VITE_CACHE_TTL=3600
+```
+
+### Feature Flags
+
+Toggle features without deploying new code:
+
+```typescript
+// src/config/features.ts
+export const features = {
+  experimental: import.meta.env.VITE_ENABLE_EXPERIMENTAL_FEATURES === 'true',
+  analytics: import.meta.env.VITE_ENABLE_ANALYTICS !== 'false',
+};
+
+// Usage in components
+if (features.experimental) {
+  // Show experimental feature
+}
+```
+
+### Custom Hooks
+
+Reusable hooks for common functionality:
+
+```typescript
+// src/hooks/useLocalStorage.ts
+import { useState, useEffect } from 'react';
+
+export function useLocalStorage<T>(key: string, initialValue: T) {
+  const [storedValue, setStoredValue] = useState<T>(() => {
+    try {
+      const item = window.localStorage.getItem(key);
+      return item ? JSON.parse(item) : initialValue;
+    } catch (error) {
+      console.error(error);
+      return initialValue;
+    }
+  });
+
+  const setValue = (value: T | ((val: T) => T)) => {
+    try {
+      const valueToStore = value instanceof Function ? value(storedValue) : value;
+      setStoredValue(valueToStore);
+      window.localStorage.setItem(key, JSON.stringify(valueToStore));
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  return [storedValue, setValue] as const;
+}
+```
+
+## 🚀 Deployment
+
+### Production Build
+
+Create an optimized production build:
+
+```bash
+# Install dependencies
+npm ci --production
+
+# Build the application
+npm run build
+
+# The build output will be in the `dist` directory
+```
+
+### Docker Deployment
+
+1. **Build the Docker image**:
+   ```bash
+   docker build -t saas-platform:latest .
+   ```
+
+2. **Run the container**:
+   ```bash
+   docker run -d \
+     -p 3000:80 \
+     -e NODE_ENV=production \
+     -e VITE_API_URL=https://api.yourdomain.com \
+     saas-platform:latest
+   ```
+
+### CI/CD Pipeline
+
+Example GitHub Actions workflow (`.github/workflows/deploy.yml`):
+
+```yaml
+name: Deploy to Production
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Run tests
+      run: npm test
+      
+    - name: Build application
+      run: npm run build
+      env:
+        VITE_API_URL: ${{ secrets.API_URL }}
+        
+    - name: Deploy to production
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.SSH_KEY }}
+        script: |
+          cd /var/www/saas-platform
+          git pull
+          npm ci --production
+          npm run build
+          pm2 restart saas-platform
+```
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+#### 1. Dependency Issues
+
+```bash
+# Clear npm cache
+npm cache clean --force
+
+# Remove node_modules and reinstall
+rm -rf node_modules package-lock.json
+npm install
+```
+
+#### 2. Build Failures
+
+- Check Node.js version compatibility
+- Verify environment variables are properly set
+- Check for TypeScript errors
+- Review build logs for specific error messages
+
+#### 3. Runtime Errors
+
+- Check browser console for errors
+- Verify API endpoints are accessible
+- Check authentication status
+- Review network requests in browser dev tools
+
+### Debugging
+
+#### Debugging in VS Code
+
+Add this to your `.vscode/launch.json`:
+
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome against localhost",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/src",
+      "sourceMapPathOverrides": {
+        "webpack:///src/*": "${webRoot}/*"
+      }
+    }
+  ]
+}
+```
+
+#### Debugging Tests
+
+```bash
+# Run tests in watch mode with debugger
+node --inspect-brk ./node_modules/.bin/vitest --run
+```
+
+## ⚡ Performance Optimization
+
+### Code Splitting
+
+Use dynamic imports to split your bundle:
+
+```typescript
+// Instead of:
+// import HeavyComponent from './HeavyComponent';
+
+// Use:
+const HeavyComponent = React.lazy(() => import('./HeavyComponent'));
+
+// In your component:
+<Suspense fallback={<div>Loading...</div>}>
+  <HeavyComponent />
+</Suspense>
+```
+
+### Image Optimization
+
+Use responsive images and modern formats:
+
+```jsx
+<picture>
+  <source 
+    type="image/avif" 
+    srcSet="image.avif 1x, image@2x.avif 2x"
+  />
+  <source 
+    type="image/webp" 
+    srcSet="image.webp 1x, image@2x.webp 2x"
+  />
+  <img 
+    src="image.jpg" 
+    srcSet="image.jpg 1x, image@2x.jpg 2x"
+    alt="Description"
+    loading="lazy"
+  />
+</picture>
+```
+
+### Performance Monitoring
+
+Track performance metrics:
+
+```typescript
+// src/utils/performance.ts
+export function trackPerformance(metricName: string, value: number) {
+  if (window.performance && window.performance.measure) {
+    performance.measure(metricName, {
+      start: performance.now() - value,
+      end: performance.now()
+    });
+    
+    // Log to analytics
+    if (window.gtag) {
+      gtag('event', 'performance_metric', {
+        event_category: 'Performance Metrics',
+        name: metricName,
+        value: Math.round(value),
+        non_interaction: true,
+      });
+    }
+  }
+}
+
+// Usage
+const start = performance.now();
+// ... your code ...
+const duration = performance.now() - start;
+trackPerformance('component_render_time', duration);
+```
+
+### Bundle Analysis
+
+Analyze your bundle size:
+
+```bash
+# Install the analyzer
+npm install --save-dev rollup-plugin-visualizer
+
+# Add to your Vite config
+// vite.config.ts
+import { visualizer } from 'rollup-plugin-visualizer';
+
+export default defineConfig({
+  plugins: [
+    // ... other plugins
+    visualizer({
+      open: true,
+      gzipSize: true,
+      brotliSize: true,
+    })
+  ]
+});
+
+# Then run build
+npm run build
+```
+
 ## 🎨 Styling
 
 ### CSS-in-JS with Styled Components
@@ -702,6 +1019,196 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           working-directory: ./
           vercel-args: '--prod'
+```
+
+## 🌐 Internationalization (i18n)
+
+### Setup i18next
+
+1. Install required packages:
+   ```bash
+   npm install i18next react-i18next i18next-http-backend i18next-browser-languagedetector
+   ```
+
+2. Create an i18n configuration file:
+   ```typescript
+   // src/i18n.ts
+   import i18n from 'i18next';
+   import { initReactI18next } from 'react-i18next';
+   import Backend from 'i18next-http-backend';
+   import LanguageDetector from 'i18next-browser-languagedetector';
+
+   i18n
+     .use(Backend)
+     .use(LanguageDetector)
+     .use(initReactI18next)
+     .init({
+       fallbackLng: 'en',
+       debug: process.env.NODE_ENV === 'development',
+       interpolation: {
+         escapeValue: false,
+       },
+       backend: {
+         loadPath: '/locales/{{lng}}/{{ns}}.json',
+       },
+     });
+
+   export default i18n;
+   ```
+
+### Language Files
+
+Create translation files in the `public/locales` directory:
+
+```json
+// public/locales/en/common.json
+{
+  "welcome": "Welcome to our application!",
+  "login": {
+    "title": "Sign In",
+    "email": "Email address",
+    "password": "Password",
+    "submit": "Sign In"
+  }
+}
+
+// public/locales/es/common.json
+{
+  "welcome": "¡Bienvenido a nuestra aplicación!",
+  "login": {
+    "title": "Iniciar Sesión",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "submit": "Iniciar Sesión"
+  }
+}
+```
+
+### Using Translations in Components
+
+```tsx
+import { useTranslation } from 'react-i18next';
+
+function LoginForm() {
+  const { t } = useTranslation('common');
+  
+  return (
+    <div>
+      <h1>{t('login.title')}</h1>
+      <form>
+        <div>
+          <label>{t('login.email')}</label>
+          <input type="email" />
+        </div>
+        <div>
+          <label>{t('login.password')}</label>
+          <input type="password" />
+        </div>
+        <button type="submit">{t('login.submit')}</button>
+      </form>
+    </div>
+  );
+}
+```
+
+### Language Switcher
+
+```tsx
+import { useTranslation } from 'react-i18next';
+
+function LanguageSwitcher() {
+  const { i18n } = useTranslation();
+  
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
+
+  return (
+    <div>
+      <button 
+        onClick={() => changeLanguage('en')}
+        className={i18n.language === 'en' ? 'active' : ''}
+      >
+        English
+      </button>
+      <button 
+        onClick={() => changeLanguage('es')}
+        className={i18n.language === 'es' ? 'active' : ''}
+      >
+        Español
+      </button>
+    </div>
+  );
+}
+```
+
+### Date and Number Formatting
+
+```tsx
+import { useTranslation } from 'react-i18next';
+
+i18next.services.formatter?.add('uppercase', (value) => {
+  return value.toUpperCase();
+});
+
+function FormattedContent() {
+  const { t, i18n } = useTranslation();
+  
+  const date = new Date();
+  const amount = 1234.56;
+  
+  return (
+    <div>
+      {/* Date formatting */}
+      <p>{new Intl.DateTimeFormat(i18n.language).format(date)}</p>
+      
+      {/* Number formatting */}
+      <p>{new Intl.NumberFormat(i18n.language, { 
+        style: 'currency', 
+        currency: 'USD' 
+      }).format(amount)}</p>
+      
+      {/* Custom formatter */}
+      <p>{t('welcome', { format: 'uppercase' })}</p>
+    </div>
+  );
+}
+```
+
+### Testing i18n
+
+```typescript
+// src/setupTests.ts
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+
+i18n.use(initReactI18next).init({
+  lng: 'en',
+  fallbackLng: 'en',
+  ns: ['common'],
+  defaultNS: 'common',
+  resources: {
+    en: {
+      common: {
+        welcome: 'Welcome!',
+      },
+    },
+  },
+});
+
+// In your test file
+import { render, screen } from '@testing-library/react';
+import { I18nextProvider } from 'react-i18next';
+import i18n from 'i18next';
+
+test('renders welcome message', () => {
+  render(
+    <I18nextProvider i18n={i18n}>
+      <MyComponent />
+    </I18nextProvider>
+  );
+  expect(screen.getByText('Welcome!')).toBeInTheDocument();
+});
 ```
 
 ## 📚 Learning Resources

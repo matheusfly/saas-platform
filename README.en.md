@@ -1,9 +1,9 @@
-# 📊 Plataforma de Business Intelligence SaaS
+# 📊 SaaS Business Intelligence Platform
 
 <div align="center">
-  <img src="img/image.png" alt="Banner da Plataforma de Business Intelligence SaaS" style="width: 100%; max-width: 1000px; margin: 20px 0;">
+  <img src="img/image.png" alt="SaaS Business Intelligence Platform Banner" style="width: 100%; max-width: 1000px; margin: 20px 0;">
   
-  <p>Solução de BI moderna, escalável e intuitiva para organizações orientadas a dados</p>
+  <p>Modern, scalable, and intuitive BI solution for data-driven organizations</p>
 
   <!-- Project Status -->
   <p>
@@ -42,152 +42,91 @@
   </p>
 </div>
 
-## 🔄 Version Control & Workflow
+## 📚 Documentation
 
-We follow a structured Git workflow to maintain code quality and enable smooth collaboration. For detailed guidelines, see our [Git Workflow Documentation](docs/GIT_WORKFLOW.md).
+### 📦 Project Modules
 
-### Quick Start
+| Module | Description | Documentation | Status |
+|--------|-------------|----------------|--------|
+| **Business Intelligence Dashboard** | Core analytics and reporting dashboard | [View Docs](src/pages/base_business-intelligence-dashboard/README-Dash.md) | ✅ Active |
+| **Client 360° Panel** | Customer data and interaction management | [View Docs](src/pages/painel-cliente-360/README-360.md) | ✅ Active |
+| **Schedule Manager** | Employee scheduling and time tracking | [View Docs](src/pages/schedule-manager/README-Ponto.md) | ✅ Active |
 
-```bash
-# Clone the repository
-git clone https://github.com/your-org/saas-platform.git
-cd saas-platform
+### 📖 Getting Started
 
-# Initialize and update submodules
-git submodule update --init --recursive
+| Document | Description | Last Updated |
+|----------|-------------|--------------|
+| [📋 Quick Start](docs/GETTING_STARTED.md) | 5-minute setup guide | 2025-08-12 |
+| [🔧 Development Guide](CONTRIBUTING.md) | Setup, workflows, and contribution guidelines | 2025-08-12 |
+| [🚀 Project Status](PROJECT_STATUS.md) | Current progress, roadmap, and milestones | 2025-08-12 |
 
-# Create a new feature branch
-git checkout -b feature/your-feature-name
-```
+### 📚 Documentation Hub
 
-### Commit Message Format
+#### Core Documentation
 
-```
-<type>[optional scope]: <description>
+| Document | Description | Last Updated |
+|----------|-------------|--------------|
+| [📖 Developer Guide](docs/DEVELOPER_GUIDE.md) | Comprehensive guide for developers | 2025-08-13 |
+| [🔍 API Reference](docs/API_REFERENCE.md) | Complete API documentation | 2025-08-13 |
+| [🗃️ Data Models](docs/DATA_MODELS.md) | Database schemas and data structures | 2025-08-13 |
+| [🧩 Components](docs/COMPONENTS.md) | UI component architecture | 2025-08-13 |
 
-[optional body]
+#### Technical References
 
-[optional footer(s)]
-```
+| Reference | Description | Status |
+|-----------|-------------|--------|
+| [🚀 Getting Started](docs/GETTING_STARTED.md) | Quick start guide | Coming Soon |
+| [🧪 Testing Strategy](docs/TESTING.md) | Testing approach and guidelines | Coming Soon |
+| [🔒 Security Guidelines](docs/SECURITY.md) | Security best practices | Coming Soon |
+| [🚀 Deployment Guide](docs/DEPLOYMENT.md) | CI/CD and infrastructure | Coming Soon |
 
-Example:
-```
-feat(auth): implement JWT authentication
+#### Module Documentation
 
-- Add JWT token generation
-- Update login endpoint
-- Add token validation middleware
+| Module | Description | Documentation | Status |
+|--------|-------------|----------------|--------|
+| 📊 Business Intelligence Dashboard | Core analytics and reporting platform | [View Documentation](src/pages/base_business-intelligence-dashboard/README.md) | ✅ Active |
+| 👥 Client 360° Panel | Comprehensive customer data and interaction management | [View Documentation](src/pages/painel-cliente-360/README.md) | ✅ Active |
+| 📅 Schedule Manager | Employee scheduling and time tracking system | [View Documentation](src/pages/schedule-manager/README.md) | ✅ Active |
 
-Closes #123
-```
+### 🔍 Quick Links
 
-### Pull Request Process
-1. Create a feature branch from `develop`
-2. Make your changes with clear, atomic commits
-3. Push to your fork and open a PR to `develop`
-4. Address review comments
-5. Squash and merge when approved
+- [📋 Project Status](PROJECT_STATUS.md)
+- [📝 Changelog](CHANGELOG.md)
+- [🤝 Contributing](CONTRIBUTING.md)
+- [❓ FAQ](docs/FAQ.md)
 
-For submodule management and advanced workflows, refer to the [detailed Git documentation](docs/GIT_WORKFLOW.md).
+### 🔍 Search Documentation
 
-## 📚 Documentação
-
-### 📦 Módulos do Projeto
-
-| Módulo | Descrição | Documentação | Status |
-|--------|-----------|---------------|--------|
-| **Painel de BI** | Painel principal de análise e relatórios | [Ver Documentação](src/pages/base_business-intelligence-dashboard/README-Dash.md) | ✅ Ativo |
-| **Painel Cliente 360°** | Gerenciamento de dados e interações com clientes | [Ver Documentação](src/pages/painel-cliente-360/README-360.md) | ✅ Ativo |
-| **Gerenciador de Horários** | Controle de escalas e ponto de funcionários | [Ver Documentação](src/pages/schedule-manager/README-Ponto.md) | ✅ Ativo |
-
-### 📖 Primeiros Passos
-
-| Documento | Descrição | Última Atualização |
-|-----------|-----------|-------------------|
-| [📋 Guia Rápido](docs/GETTING_STARTED.md) | Guia de instalação em 5 minutos | 2025-08-12 |
-| [🔧 Guia de Desenvolvimento](CONTRIBUTING.md) | Configuração, fluxos de trabalho e diretrizes de contribuição | 2025-08-12 |
-| [🚀 Status do Projeto](PROJECT_STATUS.md) | Progresso atual, roteiro e marcos | 2025-08-12 |
-
-### 📚 Central de Documentação
-
-#### Documentação Principal
-
-| Documento | Descrição | Última Atualização |
-|-----------|-----------|-------------------|
-| [📖 Guia do Desenvolvedor](docs/DEVELOPER_GUIDE.md) | Guia abrangente para desenvolvedores | 2025-08-13 |
-| [🔍 Referência da API](docs/API_REFERENCE.md) | Documentação completa da API | 2025-08-13 |
-| [🗃️ Modelos de Dados](docs/DATA_MODELS.md) | Esquemas e estruturas do banco de dados | 2025-08-13 |
-| [🧩 Componentes](docs/COMPONENTS.md) | Arquitetura dos componentes de interface | 2025-08-13 |
-
-#### Referências Técnicas
-
-| Referência | Descrição | Status |
-|------------|-----------|--------|
-| [🚀 Primeiros Passos](docs/GETTING_STARTED.md) | Guia de início rápido | Em Breve |
-| [🧪 Estratégia de Testes](docs/TESTING.md) | Abordagem e diretrizes de teste | Em Breve |
-| [🔒 Diretrizes de Segurança](docs/SECURITY.md) | Melhores práticas de segurança | Em Breve |
-| [🚀 Guia de Implantação](docs/DEPLOYMENT.md) | CI/CD e infraestrutura | Em Breve |
-
-#### Documentação dos Módulos
-
-| Módulo | Descrição | Documentação | Status |
-|--------|-----------|---------------|--------|
-| 📊 Painel de BI | Plataforma central de análise e relatórios | [Ver Documentação](src/pages/base_business-intelligence-dashboard/README.md) | ✅ Ativo |
-| 👥 Painel Cliente 360° | Gerenciamento abrangente de dados e interações com clientes | [Ver Documentação](src/pages/painel-cliente-360/README.md) | ✅ Ativo |
-| 📅 Gerenciador de Horários | Sistema de controle de escalas e ponto de funcionários | [Ver Documentação](src/pages/schedule-manager/README.md) | ✅ Ativo |
-
-### 🔍 Links Rápidos
-
-- [📋 Status do Projeto](PROJECT_STATUS.md)
-- [📝 Registro de Mudanças](CHANGELOG.md)
-- [🤝 Como Contribuir](CONTRIBUTING.md)
-- [❓ Perguntas Frequentes](docs/FAQ.md)
-
-### 🔍 Buscar Documentação
-
-<!-- Adicionar funcionalidade de busca aqui quando o site de documentação estiver configurado -->
+<!-- Add search functionality here when documentation site is set up -->
 
 ```markdown
 [Search Documentation](https://your-org.github.io/saas-platform/search)
 ```
 
-## Visão Geral
+## 📌 Overview
 
-Uma plataforma de Business Intelligence completa, construída com tecnologias web modernas, fornecendo visualização de dados, gerenciamento de clientes e agendamento em uma interface unificada.
+A comprehensive Business Intelligence platform built with modern web technologies, providing data visualization, client management, and scheduling capabilities in a unified interface.
 
-### Recursos
+### 🚀 Key Features
 
-### Painel de Business Intelligence
-- **Dashboards Interativos**: Visualização de dados em tempo real
-- **Análises Avançadas**: Insights e previsões com IA
-- **Relatórios Personalizados**: Gere e exporte relatórios detalhados
-- **Integração de Dados**: Conecte múltiplas fontes de dados
+- **Business Intelligence Dashboard**: Interactive data visualization and analytics
+- **Client 360° View**: Comprehensive client profiles and insights
+- **Schedule Management**: Appointment and task scheduling system
+- **Modular Architecture**: Independent yet integrable components
+- **Responsive Design**: Works across desktop and mobile devices
 
-### Painel Cliente 360°
-- **Visão Unificada do Cliente**: Todos os dados do cliente em um só lugar
-- **Histórico de Interações**: Acompanhe todos os pontos de contato
-- **Segmentação**: Crie segmentos de clientes dinâmicos
-- **Fluxos de Trabalho Automatizados**: Simplifique o engajamento com clientes
-
-### Gerenciador de Horários
-- **Agendamento Intuitivo**: Interface de arrastar e soltar
-- **Gestão de Recursos**: Acompanhe a disponibilidade da equipe
-- **Lembretes Automatizados**: Reduza faltas
-- **Análise de Desempenho**: Monitore a produtividade da equipe
-
-### Pilha de Tecnologia
+### 🛠 Technology Stack
 
 - **Frontend**: 
-  - React 19 com TypeScript
-  - Vite para build tooling
-  - TailwindCSS para styling
-  - React Query para data fetching
-  - Chart.js para visualização de dados
+  - React 19 with TypeScript
+  - Vite for build tooling
+  - TailwindCSS for styling
+  - React Query for data fetching
+  - Chart.js for data visualization
 
 - **Testing**:
-  - Vitest para unit testing
-  - Playwright para E2E testing
-  - React Testing Library para component testing
+  - Vitest for unit testing
+  - Playwright for E2E testing
   - React Testing Library for component testing
 
 - **Development Tools**:
