@@ -1,0 +1,167 @@
+/* Define some CSS variables for consistent styling */
+$sidebar-width: 25;
+$main-bg: $surface;
+$grid-bg: $panel;
+$highlight-color: orange;
+
+Screen {
+    layout: grid;
+    grid-size: 2; /* Two columns */
+    grid-columns: $sidebar-width 1fr; /* Fixed sidebar width, rest for main content */
+    grid-rows: auto 1fr auto; /* Header, main content, footer */
+    background: $main-bg;
+}
+
+Header {
+    column-span: 2; /* Span across both columns */
+    height: 3;
+    content-align: center middle;
+    background: $primary;
+    color: white;
+}
+
+Footer {
+    column-span: 2; /* Span across both columns */
+    height: 2;
+    content-align: center middle;
+    background: $primary;
+    color: white;
+}
+
+/* Main application grid container */
+#app-grid {
+    column-span: 2; /* Span across both columns */
+    layout: grid;
+    grid-size: 2; /* Two columns for sidebar and main content */
+    grid-columns: $sidebar-width 1fr;
+    grid-rows: 1fr; /* Main content takes remaining height */
+}
+
+/* Sidebar styling */
+#sidebar {
+    background: $panel;
+    border: solid $primary;
+    padding: 1;
+    margin: 1;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto; /* Enable scrolling for sidebar content */
+
+    /* Nested CSS for sidebar items */
+    .sidebar-item {
+        background: $boost;
+        color: $text;
+        padding: 0 1;
+        margin-bottom: 1;
+        height: 3;
+        content-align: center middle;
+    }
+
+    /* Nested CSS for highlighted sidebar items */
+    .sidebar-item.highlight {
+        background: $highlight-color;
+        color: black;
+        text-style: bold;
+    }
+
+    /* Nested CSS for the toggle highlight button */
+    Button {
+        width: 100%;
+        margin-bottom: 1;
+        variant: primary;
+    }
+}
+
+/* Hidden sidebar class */
+#sidebar.-hidden {
+    width: 0;
+    min-width: 0;
+    max-width: 0;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: none; /* Hide completely */
+}
+
+/* Main content area styling */
+#main-content {
+    layout: grid;
+    grid-size: 3; /* 3 columns for grid cells */
+    grid-columns: 1fr 1fr auto; /* Flexible columns, last one auto-sized */
+    grid-rows: auto auto auto 1fr 1fr; /* Adjusted for new elements */
+    grid-gutter: 1 2; /* Vertical and horizontal gutter */
+    background: $grid-bg;
+    border: solid $secondary;
+    padding: 1;
+    margin: 1;
+    overflow: auto; /* Enable scrolling for main content */
+
+    /* Nested CSS for main title */
+    #main-title {
+        column-span: 3; /* Spans all 3 columns */
+        text-align: center;
+        text-style: bold;
+        color: $text;
+        background: $accent;
+        padding: 1;
+        margin-bottom: 1;
+    }
+
+    /* Nested CSS for info text */
+    .info-text {
+        column-span: 3; /* Spans all 3 columns */
+        text-align: center;
+        color: $text-muted;
+        margin-bottom: 1;
+    }
+    
+    /* Button section styling */
+    #button-section {
+        column-span: 3;
+        layout: horizontal;
+        height: auto;
+        margin-bottom: 1;
+        padding: 1;
+        background: $boost;
+        border: round $secondary;
+    }
+    
+    #button-section Button {
+        margin-right: 1;
+        width: auto;
+    }
+    
+    /* Progress bar styling */
+    ProgressBar {
+        column-span: 3;
+        margin-bottom: 1;
+        height: 1;
+    }
+    
+    /* Terminal output styling */
+    #output_log {
+        column-span: 3;
+        height: 100%;
+        border: solid $secondary;
+        padding: 1;
+        background: $surface;
+        color: $text;
+    }
+
+    /* Nested CSS for grid cells */
+    .grid-cell {
+        background: $boost;
+        color: $text;
+        border: round $surface;
+        content-align: center middle;
+        height: 100%;
+    }
+
+    /* Specific styling for the cell that spans columns */
+    #span-cell {
+        column-span: 2; /* This cell spans 2 columns */
+        background: $warning;
+        color: black;
+        text-style: bold;
+    }
+}

@@ -1,51 +1,101 @@
+/* Stopwatch widget styling
+ *
+ * This section defines the appearance of the Stopwatch widget, which is
+ * a HorizontalGroup containing buttons and a time display.
+ */
 Stopwatch {
-    background: $boost;
-    height: 5;
-    margin: 1;
-    min-width: 50;
-    padding: 1;
+    background: $boost;     /* Background color using theme variable */
+    height: 5;              /* Fixed height of 5 cells */
+    margin: 1;              /* 1 cell margin on all sides */
+    min-width: 50;          /* Minimum width of 50 cells */
+    padding: 1;             /* 1 cell padding on all sides */
 }
 
+/* TimeDisplay widget styling
+ *
+ * This section styles the Digits widget that shows the elapsed time.
+ * It's a child of the Stopwatch widget.
+ */
 TimeDisplay {
-    text-align: center;
-    color: $foreground-muted;
-    height: 3;
+    text-align: center;     /* Center-align the time text */
+    color: $foreground-muted; /* Muted foreground color from theme */
+    height: 3;              /* Fixed height of 3 cells */
 }
 
+/* Button widget styling
+ *
+ * This section styles all Button widgets within the application.
+ * Individual buttons are styled further with ID selectors below.
+ */
 Button {
-    width: 16;
+    width: 16;              /* Fixed width of 16 cells */
 }
 
+/* Start button specific styling
+ *
+ * The start button is docked to the left side of the Stopwatch widget.
+ */
 #start {
-    dock: left;
+    dock: left;             /* Dock to the left edge */
 }
 
+/* Stop button specific styling
+ *
+ * The stop button is also docked to the left but is initially hidden.
+ * It becomes visible when the stopwatch is running (see .started section).
+ */
 #stop {
-    dock: left;
-    display: none;
+    dock: left;             /* Dock to the left edge */
+    display: none;          /* Initially hidden */
 }
 
+/* Reset button specific styling
+ *
+ * The reset button is docked to the right side of the Stopwatch widget.
+ */
 #reset {
-    dock: right;
+    dock: right;            /* Dock to the right edge */
 }
 
+/* Started state styling
+ *
+ * This CSS class is added to a Stopwatch widget when it's running.
+ * It changes the appearance to indicate active state.
+ */
 .started {
-    background: $success-muted;
-    color: $text;
+    background: $success-muted; /* Success color background (greenish) */
+    color: $text;               /* Text color from theme */
 }
 
+/* TimeDisplay in started state
+ *
+ * When the stopwatch is running, the time display uses a more prominent color.
+ */
 .started TimeDisplay {
-    color: $foreground;
+    color: $foreground;         /* Foreground color (more visible than muted) */
 }
 
+/* Start button in started state
+ *
+ * When the stopwatch is running, the start button is hidden.
+ */
 .started #start {
-    display: none
+    display: none               /* Hide the start button */
 }
 
+/* Stop button in started state
+ *
+ * When the stopwatch is running, the stop button becomes visible.
+ */
 .started #stop {
-    display: block
+    display: block              /* Show the stop button */
 }
 
+/* Reset button in started state
+ *
+ * When the stopwatch is running, the reset button becomes invisible
+ * but still takes up space (visibility vs display).
+ */
 .started #reset {
-    visibility: hidden
+    visibility: hidden          /* Hide but keep space */
 }
