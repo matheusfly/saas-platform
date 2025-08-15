@@ -1,0 +1,99 @@
+# FUTURE WORK: Docker Compose CI Workflow
+# This is a proof-of-concept CI workflow that demonstrates how to use
+# docker compose --profile test up to run unit and e2e tests in CI.
+#
+# TODO: This workflow is currently a stub and needs to be fully implemented
+# when the Docker Compose test profile and test services are ready.
+
+name: Docker Compose CI (Proof of Concept)
+
+on:
+  # Currently disabled - uncomment when ready to implement
+  # push:
+  #   branches: [ main, develop ]
+  # pull_request:
+  #   branches: [ main ]
+  
+  # Manual trigger only for now
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Run Tests via Docker Compose
+    runs-on: ubuntu-latest
+    
+    # FUTURE WORK: Add environment variables as needed
+    # env:
+    #   DATABASE_URL: postgres://test:test@localhost:5432/test_db
+    #   REDIS_URL: redis://localhost:6379
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      # FUTURE WORK: Add any necessary setup steps
+      # - name: Set up environment files
+      #   run: |
+      #     cp .env.example .env.test
+      #     # Configure test environment variables
+      
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      
+      # FUTURE WORK: Add Docker layer caching if needed
+      # - name: Cache Docker layers
+      #   uses: actions/cache@v3
+      #   with:
+      #     path: /tmp/.buildx-cache
+      #     key: ${{ runner.os }}-buildx-${{ github.sha }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-buildx-
+      
+      - name: Run tests with Docker Compose
+        run: |
+          # FUTURE WORK: This command will run unit and e2e tests
+          # using the test profile defined in docker-compose.yml
+          docker compose --profile test up --build --abort-on-container-exit --exit-code-from test-runner
+          
+          # Alternative approach if test services need to be run separately:
+          # docker compose --profile test up -d
+          # docker compose exec test-runner npm run test:unit
+          # docker compose exec test-runner npm run test:e2e
+          # docker compose down
+      
+      # FUTURE WORK: Add test result collection and reporting
+      # - name: Collect test results
+      #   if: always()
+      #   run: |
+      #     docker compose cp test-runner:/app/test-results ./test-results
+      #     docker compose cp test-runner:/app/coverage ./coverage
+      
+      # - name: Upload test results
+      #   if: always()
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: test-results
+      #     path: |
+      #       test-results/
+      #       coverage/
+      
+      # - name: Upload coverage to Codecov
+      #   if: always()
+      #   uses: codecov/codecov-action@v3
+      #   with:
+      #     files: ./coverage/lcov.info
+      
+      - name: Clean up
+        if: always()
+        run: |
+          docker compose --profile test down -v
+          docker system prune -f
+
+# FUTURE WORK: Additional considerations for implementation:
+# 1. Define test profile in docker-compose.yml with test services
+# 2. Create test-runner service that executes unit and e2e tests
+# 3. Configure test databases and dependencies in the test profile
+# 4. Add proper error handling and test result reporting
+# 5. Consider adding matrix builds for different environments
+# 6. Add integration with code coverage tools
+# 7. Configure notifications for test failures

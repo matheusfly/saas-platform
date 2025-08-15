@@ -1,0 +1,70 @@
+# CI/CD compose file - build and test only
+include:
+  - docker-compose.yml
+
+# Override specific services for CI environment
+services:
+  # Build services run first
+  web-root-build:
+    environment:
+      - NODE_ENV=production
+      - CI=true
+    volumes:
+      - .:/app:ro  # read-only in CI
+      - web_build_cache:/app/node_modules
+
+  dashboard-page-build:
+    environment:
+      - NODE_ENV=production
+      - CI=true
+    volumes:
+      - .:/app:ro
+      - dash_build_cache:/app/node_modules
+
+  cliente360-page-build:
+    environment:
+      - NODE_ENV=production
+      - CI=true
+    volumes:
+      - .:/app:ro
+      - c360_build_cache:/app/node_modules
+
+  schedule-manager-build:
+    environment:
+      - NODE_ENV=production
+      - CI=true
+    volumes:
+      - .:/app:ro
+      - sched_build_cache:/app/node_modules
+
+  # Test services run after build
+  test-runner:
+    environment:
+      - NODE_ENV=test
+      - CI=true
+    volumes:
+      - .:/app:ro
+      - test_cache:/app/node_modules
+
+  e2e-runner:
+    environment:
+      - NODE_ENV=test
+      - CI=true
+      - PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
+    volumes:
+      - .:/app:ro
+      - e2e_cache:/app/node_modules
+      - playwright-browsers:/ms-playwright
+
+volumes:
+  web_build_cache:
+  dash_build_cache:
+  c360_build_cache:
+  sched_build_cache:
+  test_cache:
+  e2e_cache:
+
+# Only activate build and test profiles
+profiles:
+  - build
+  - test

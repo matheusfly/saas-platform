@@ -122,6 +122,9 @@ const DashboardPage: React.FC<DashboardPageProps> = ({ searchedCustomers, loadin
                     <div className="ml-4">
                         <h1 className="text-3xl lg:text-4xl font-bold">Painel de Inteligência</h1>
                         <p className="text-lg opacity-90">Análise de clientes para gestão estratégica</p>
+                        <div className="mt-2 px-3 py-1 bg-green-500 text-green-900 text-xs font-semibold rounded-full inline-block">
+                            🔥 Hot Reload Active - Test #{Math.floor(Math.random() * 1000)}
+                        </div>
                     </div>
                 </div>
             </header>

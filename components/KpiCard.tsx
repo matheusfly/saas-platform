@@ -9,6 +9,7 @@ interface KpiCardProps {
 }
 
 const KpiCard: React.FC<KpiCardProps> = ({ data, onClick, isActive }) => {
+    // HOT RELOAD TEST: Updated at 2025-08-14T00:22:21.419Z - Test #423
     const { title, value, change, changeType, icon } = data;
     const isIncrease = changeType === 'increase';
     const changeColor = isIncrease ? 'text-text-increase' : 'text-text-decrease';

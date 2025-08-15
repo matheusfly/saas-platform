@@ -9,7 +9,8 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "dev:host": "concurrently \"npm run dev\""
   },
   "dependencies": {
     "@genkit-ai/mcp": "^1.16.1",

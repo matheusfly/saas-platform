@@ -4,6 +4,8 @@
   <img src="img/image.png" alt="Banner da Plataforma de Business Intelligence SaaS" style="width: 100%; max-width: 1000px; margin: 20px 0;">
   
   <p>Solução de BI moderna, escalável e intuitiva para organizações orientadas a dados</p>
+  
+  <p>Transforme dados em insights acionáveis com nossa plataforma completa de análise de negócios. Desenvolvida para equipes que buscam eficiência e clareza na tomada de decisões baseadas em dados.</p>
 
   <!-- Project Status -->
   <p>
@@ -42,53 +44,86 @@
   </p>
 </div>
 
-## 🔄 Version Control & Workflow
+## 📑 Sumário Rápido
 
-We follow a structured Git workflow to maintain code quality and enable smooth collaboration. For detailed guidelines, see our [Git Workflow Documentation](docs/GIT_WORKFLOW.md).
+- [🔄 Controle de Versão e Fluxo de Trabalho](#-controle-de-versão-e-fluxo-de-trabalho)
+  - [Começando Rápido](#-começando-rápido)
+  - [Formato das Mensagens de Commit](#-formato-das-mensagens-de-commit)
+  - [Processo de Pull Request](#-processo-de-pull-request)
+- [🚀 Getting Started](#-getting-started)
+  - [🛠 Installation](#-installation)
+- [🐳 Running with Docker](#-running-with-docker)
+  - [Prerequisites](#prerequisites)
+  - [🚀 Quick Start](#-quick-start-1)
+  - [📋 Available Commands](#-available-commands)
+  - [🗂️ Port Mapping Table](#️-port-mapping-table)
+  - [📦 Docker Volumes](#-docker-volumes)
+  - [🔧 Development Workflow](#-development-workflow)
+  - [🔍 Troubleshooting](#-troubleshooting)
+  - [🏗️ Production Deployment](#️-production-deployment)
+- [📚 Documentação](#-documentação)
+  - [📄 Documentação Principal](docs/INDEX.md)
+    - [Visão Geral do Projeto](docs/README.md)
+    - [Fluxo de Trabalho Git](docs/GIT_WORKFLOW.md)
+    - [Guia do Desenvolvedor](docs/DEVELOPER_GUIDE.md)
+  - [🏗️ Arquitetura](docs/ARCHITECTURE.md)
+    - [Componentes do Sistema](docs/COMPONENTS.md)
+    - [Modelos de Dados](docs/DATA_MODELS.md)
+  - [🔌 API e Integração](docs/API_REFERENCE.md)
+    - [Referência da API](docs/API_REFERENCE.md)
+    - [Versionamento da API](docs/API_VERSIONING.md)
+  - [🚀 Implantação](docs/DEPLOYMENT.md)
+  - [🔒 Segurança](docs/SECURITY.md)
+  - [🧪 Testes](docs/TESTING.md)
+  - [📅 Planejamento](docs/ROADMAP.md)
 
-### Quick Start
+## 🔄 Controle de Versão e Fluxo de Trabalho
+
+Seguimos um fluxo de trabalho estruturado com Git para manter a qualidade do código e permitir uma colaboração suave. Para diretrizes detalhadas, consulte nossa [Documentação de Fluxo de Trabalho Git](docs/GIT_WORKFLOW.md).
+
+### 🚀 Começando Rápido
 
 ```bash
-# Clone the repository
+# Clonar o repositório
 git clone https://github.com/your-org/saas-platform.git
 cd saas-platform
 
-# Initialize and update submodules
+# Inicializar e atualizar submódulos
 git submodule update --init --recursive
 
-# Create a new feature branch
-git checkout -b feature/your-feature-name
+# Criar uma nova branch de funcionalidade
+git checkout -b feature/nome-da-sua-funcionalidade
 ```
 
-### Commit Message Format
+### ✍️ Formato das Mensagens de Commit
 
 ```
-<type>[optional scope]: <description>
+<tipo>[escopo opcional]: <descrição>
 
-[optional body]
+[corpo opcional]
 
-[optional footer(s)]
+[rodapé opcional]
 ```
 
-Example:
+Exemplo:
 ```
-feat(auth): implement JWT authentication
+feat(autenticacao): implementar autenticação JWT
 
-- Add JWT token generation
-- Update login endpoint
-- Add token validation middleware
+- Adicionar geração de token JWT
+- Atualizar endpoint de login
+- Adicionar middleware de validação de token
 
-Closes #123
+Fecha #123
 ```
 
-### Pull Request Process
-1. Create a feature branch from `develop`
-2. Make your changes with clear, atomic commits
-3. Push to your fork and open a PR to `develop`
-4. Address review comments
-5. Squash and merge when approved
+### 🔄 Processo de Pull Request
+1. Crie uma branch de funcionalidade a partir de `develop`
+2. Faça suas alterações com commits atômicos e claros
+3. Envie para seu fork e abra um PR para `develop`
+4. Responda aos comentários de revisão
+5. Faça squash e merge quando aprovado
 
-For submodule management and advanced workflows, refer to the [detailed Git documentation](docs/GIT_WORKFLOW.md).
+Para gerenciamento de submódulos e fluxos de trabalho avançados, consulte a [documentação detalhada do Git](docs/GIT_WORKFLOW.md).
 
 ## 📚 Documentação
 
@@ -104,9 +139,13 @@ For submodule management and advanced workflows, refer to the [detailed Git docu
 
 | Documento | Descrição | Última Atualização |
 |-----------|-----------|-------------------|
-| [📋 Guia Rápido](docs/GETTING_STARTED.md) | Guia de instalação em 5 minutos | 2025-08-12 |
-| [🔧 Guia de Desenvolvimento](CONTRIBUTING.md) | Configuração, fluxos de trabalho e diretrizes de contribuição | 2025-08-12 |
-| [🚀 Status do Projeto](PROJECT_STATUS.md) | Progresso atual, roteiro e marcos | 2025-08-12 |
+| [📚 Documentação Completa](https://your-org.github.io/saas-platform/) | Documentação abrangente da plataforma | 2025-08-13 |
+| [📋 Guia Rápido](/docs/getting-started/quickstart) | Guia de instalação em 5 minutos | 2025-08-13 |
+| [🔧 Guia de Desenvolvimento](CONTRIBUTING.md) | Configuração, fluxos de trabalho e diretrizes de contribuição | 2025-08-13 |
+| [🚀 Status do Projeto](PROJECT_STATUS.md) | Progresso atual, roteiro e marcos | 2025-08-13 |
+| [📊 Guia de Dashboards](/docs/guides/dashboards) | Como criar e gerenciar dashboards | 2025-08-13 |
+| [🔐 Autenticação e Autorização](/docs/guides/authentication) | Gerenciamento de usuários e permissões | 2025-08-13 |
+| [🔌 Fontes de Dados](/docs/guides/data-sources-queries) | Conectando e consultando fontes de dados | 2025-08-13 |
 
 ### 📚 Central de Documentação
 
@@ -246,10 +285,244 @@ npm run db:migrate
 ```bash
 # Start frontend development server
 npm run dev
-
-# In a separate terminal, start backend server
-npm run dev:server
+# or
+yarn dev
 ```
+
+## 🐳 Running with Docker
+
+### Prerequisites
+
+Before running the application with Docker, ensure you have the following installed:
+
+- **Docker** ≥ 24.0.0
+- **Docker Compose** v2.x (comes bundled with Docker Desktop)
+
+You can verify your installation with:
+
+```bash
+# Check Docker version
+docker --version
+# Should output: Docker version 24.x.x or higher
+
+# Check Docker Compose version
+docker compose version
+# Should output: Docker Compose version v2.x.x or higher
+```
+
+### 🚀 Quick Start
+
+Get the application running in containers with these simple commands:
+
+```bash
+# 1. Clone the repository (if you haven't already)
+git clone https://github.com/your-org/saas-platform.git
+cd saas-platform
+
+# 2. Start all development services
+docker compose --profile dev up -d
+
+# 3. View running services
+docker compose ps
+
+# 4. View logs from all services
+docker compose logs -f
+
+# 5. Stop all services
+docker compose --profile dev down
+```
+
+The application will be available at the ports listed in the [Port Mapping Table](#port-mapping-table) below.
+
+### 📋 Available Commands
+
+#### Development Commands
+```bash
+# Start all development services in background
+docker compose --profile dev up -d
+
+# Start with real-time logs
+docker compose --profile dev up
+
+# Start specific service
+docker compose --profile dev up web-root
+
+# Rebuild and start (after code changes to Dockerfile)
+docker compose --profile dev up --build
+
+# Stop all services
+docker compose --profile dev down
+
+# Stop and remove volumes (clean slate)
+docker compose --profile dev down -v
+```
+
+#### Production Build Commands
+```bash
+# Build all services for production
+docker compose --profile build up
+
+# Build specific service
+docker compose --profile build up web-root-build
+```
+
+#### Testing Commands
+```bash
+# Run unit tests
+docker compose --profile test up test-runner
+
+# Run E2E tests
+docker compose --profile test up e2e-runner
+
+# Run all tests
+docker compose --profile test up
+```
+
+### 🗂️ Port Mapping Table
+
+The following ports are reserved for the different services:
+
+| Service | Port | URL | Description |
+|---------|------|-----|-------------|
+| **web-root** | 5173 | http://localhost:5173 | Main application (Vite dev server) |
+| **dashboard-page** | 5174 | http://localhost:5174 | BI Dashboard module |
+| **cliente360-page** | 5175 | http://localhost:5175 | Client 360° module |
+| **schedule-manager** | 5176 | http://localhost:5176 | Schedule management module |
+| **docs-site** | 3000 | http://localhost:3000 | Documentation site |
+
+> ⚠️ **Port Conflicts**: Ensure these ports are not in use by other applications before starting the development environment. You can check with `netstat -tulpn | grep :<port>` on Linux/macOS or `netstat -ano | findstr :<port>` on Windows.
+
+### 📦 Docker Volumes
+
+The project uses named volumes to persist node_modules and improve performance across container restarts:
+
+| Volume Name | Purpose | Performance Benefit |
+|-------------|---------|--------------------|
+| `web_node_modules` | Web root application dependencies | Faster container startup |
+| `dash_node_modules` | Dashboard page dependencies | Avoid reinstalling packages |
+| `c360_node_modules` | Cliente360 page dependencies | Persistent dependency cache |
+| `sched_node_modules` | Schedule manager dependencies | Improved build performance |
+| `docs_node_modules` | Documentation site dependencies | Faster docs rebuilding |
+| `test-runner-node-modules` | Test runner dependencies | Consistent test environment |
+| `e2e-runner-node-modules` | E2E test dependencies | Faster test execution |
+| `playwright-browsers` | Playwright browser cache | Avoid browser re-downloads |
+
+#### Managing Volumes
+```bash
+# List all volumes
+docker volume ls
+
+# Remove specific volume (forces package reinstall)
+docker volume rm saas_web_node_modules
+
+# Remove all project volumes
+docker compose --profile dev down -v
+
+# Inspect volume details
+docker volume inspect saas_web_node_modules
+```
+
+### 🔧 Development Workflow
+
+#### Hot Reload Development
+The development containers are configured with volume mounts for hot reload:
+
+```bash
+# Start development environment
+docker compose --profile dev up
+
+# Make changes to your code - changes will be reflected immediately
+# No need to restart containers for code changes
+```
+
+#### Debugging Services
+```bash
+# View logs from specific service
+docker compose logs -f web-root
+
+# Execute command in running container
+docker compose exec web-root sh
+
+# View container resource usage
+docker stats
+
+# Inspect container details
+docker compose exec web-root cat /etc/hosts
+```
+
+#### Clean Development Environment
+```bash
+# Stop all services and clean up
+docker compose --profile dev down -v --remove-orphans
+
+# Remove all unused Docker resources
+docker system prune -af
+
+# Start fresh
+docker compose --profile dev up --build
+```
+
+### 🔍 Troubleshooting
+
+#### Common Issues
+
+**Port Already in Use**
+```bash
+# Find process using the port
+lsof -i :5173  # macOS/Linux
+netstat -ano | findstr :5173  # Windows
+
+# Kill the process or change the port in docker-compose.yml
+```
+
+**Permission Issues (Linux)**
+```bash
+# Fix ownership of generated files
+sudo chown -R $USER:$USER .
+
+# Run with current user ID
+docker compose --profile dev up --build
+```
+
+**Out of Disk Space**
+```bash
+# Clean up Docker resources
+docker system prune -af
+docker volume prune -f
+```
+
+**Container Won't Start**
+```bash
+# Check container logs
+docker compose logs service-name
+
+# Rebuild from scratch
+docker compose build --no-cache service-name
+```
+
+### 🏗️ Production Deployment
+
+For production deployment, use the production build profile:
+
+```bash
+# Build production images
+docker compose --profile build up
+
+# The built assets will be available in the containers
+# Copy them out for deployment to your web server
+docker cp saas-web-root-build-1:/app/dist ./dist
+```
+
+### 🎯 Next Steps
+
+After getting Docker running:
+
+1. **Explore the Application**: Visit http://localhost:5173 to see the main application
+2. **Check the Documentation**: Visit http://localhost:3000 for detailed docs
+3. **Run Tests**: Use `docker compose --profile test up` to run the test suite
+4. **Start Developing**: Make changes to the code and see them reflected immediately
+
+For more advanced Docker configurations and deployment options, see the [Deployment Guide](docs/DEPLOYMENT.md).
 
 ### Development
 

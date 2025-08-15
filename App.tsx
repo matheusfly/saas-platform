@@ -51,6 +51,12 @@ function App() {
     <div className="flex bg-ui-background min-h-screen font-sans">
       <Sidebar onSearchChange={handleSearch} searchTerm={searchTerm} />
       <main className="flex-1 p-6 lg:p-10 ml-64">
+        {/* Hot Reload Test Indicator */}
+        <div className="mb-4 text-right">
+          <div className="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">
+            ⚡ Main App - Hot Reload Test 21:22:25 #425
+          </div>
+        </div>
           <Routes>
             <Route path="/" element={
                 <DashboardPage 
